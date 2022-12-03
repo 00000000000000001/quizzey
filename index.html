@@ -1,17 +1,57 @@
 <!DOCTYPE html>
     <head>
+	<title> SDG Prototype </title>
         <style>
-            div {
-                border: solid thin black;
-            }
+			body{
+			text-align:center;
+			background-color: #f8fff2;
+			}
+			
+			h1{
+			 color: #c2ed9d;
+			}
+			
+			#a, #b, #c, #d{
+			color: #4d7776;
+			font-size: 25px;
+			padding: 1px;
+			margin: 20px;
+			font-weight: bold;
+			}
+			
+			#a:hover {
+			 color: #31A2AA;
+			 font-size: 30px;
+			}
+			#b:hover {
+			  color: #31A2AA;
+			  font-size: 30px;
+			}
+			#c:hover {
+			 color: #31A2AA;
+			 font-size: 30px;
+			}
+			#d:hover {
+			  color: #31A2AA;
+			  font-size: 30px;
+			}
+			
+			#Frage{
+			color: #809d67;
+			font-weight: bold;
+			font-size:30px;
+			margin-top: 50px;
+			margin-bottom: 10px;
+			}
+
         </style>
-        <script defer src="./index.js"></script>
+        <script defer src="index.js"></script>
     </head>
     <body>
-        <h1>Quizzey</h1>
-        <div id="Karte">
-            <p id="Frage"></p>
-            <div id="Antworten">
+        <h1>Learn more about the SDGs - Take the SDG Quiz</h1>
+        <div id="Karte"> <!-- ober div fuer frage und antwort-->
+            <i><p id="Frage"></p></i> <!--div fuer frage-->
+            <div id="Antworten"> <!--div fuer  antwort-->
                 <div id="a" onclick="beantworten(0)"></div>
                 <div id="b" onclick="beantworten(1)"></div>
                 <div id="c" onclick="beantworten(2)"></div>
