@@ -6,10 +6,10 @@ function Karte ( frage, antworten, richtige_antwort) {
 
 const k1 = new Karte('Wofür steht die Abkürzung SDG?', 
     [
-        'Deine Oma', 
-        'Koks im Walde', 
+        'Hallo', 
+        'Auto', 
         'Sustainable Developement Goals', 
-        'Ich bin ein Riesendinosaurier'
+        'Schuhe'
     ], 2);
 const k2 = new Karte('Welcher Tag ist heute?', 
     [
