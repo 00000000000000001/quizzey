@@ -63,6 +63,9 @@ let stapel = [k1, k2, k3, k4, k5, k6,k7];
 
 let aktuelle_frage = {};
 
+let right = 0;
+let wrong = 0;
+
 const buchstaben = ['A', 'B', 'C', 'D'];
 
 function mischen( arr ) {
@@ -76,8 +79,31 @@ function mischen( arr ) {
 function aufdecken( stapel ) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
+		
         let karte = document.getElementById('Karte');
-        karte.textContent = 'Game leider over!';
+       // karte.textContent = "Thank you for playing :)"
+	/*	
+		if(right == 7){
+			 karte.textContent = "Right answers: " +  right + " You are a sustainable homie" ;
+		}
+		
+		else{
+		let dings = document.getElementById('ergebniss');
+        karte.textContent = "Right answers: " +  right + "  Wrong Answers: " + wrong ;}
+		
+		*/
+		
+		
+		
+		
+		if (right == 7) {
+		  karte.textContent = "Right answers: " +  right + " You are a sustainable homie" ;
+		} else if (wrong == 7) {
+		  karte.textContent = "All your answers were wrong! You should read and learn more about the SDGs! ";
+		} else {
+		   karte.textContent = "Right answers: " +  right + "  Wrong Answers: " + wrong ;
+		}
+				
         aktuelle_frage = {};
         return;
     }
@@ -108,11 +134,13 @@ function beantworten( antwort ) {
     if (antwort === aktuelle_frage.richtige_antwort) {
 		 document.getElementById('rightwrong').innerHTML = "Right answer!";
         // alert("Richtig");
+		 right = ++right;
     }
     // Bei falscher Antwort:
     else {
         const richtig = aktuelle_frage.richtige_antwort;
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
+		wrong = ++wrong;
     }
     aufdecken(stapel);
 }

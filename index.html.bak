@@ -20,19 +20,19 @@
 			}
 			
 			#a:hover {
-			 color:#699c3d;
+			 color: #27d93e;
 			 font-size: 30px;
 			}
 			#b:hover {
-			  color: #699c3d;
+			  color: #27d93e;
 			  font-size: 30px;
 			}
 			#c:hover {
-			 color:#699c3d;
+			 color:#27d93e;
 			 font-size: 30px;
 			}
 			#d:hover {
-			  color:#699c3d;
+			  color: #27d93e;
 			  font-size: 30px;
 			}
 			
