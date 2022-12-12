@@ -6,17 +6,10 @@ function Karte ( frage, antworten, richtige_antwort) {
 
 const k1 = new Karte('What daily income is defined as extreme poverty?', 
     [
-<<<<<<< HEAD
-        'Hallo', 
-        'Auto', 
-        'Sustainable Developement Goals', 
-        'Schuhe'
-=======
         '$2.50', 
         '3.50€', 
         '$1.25', 
         '5.00€'
->>>>>>> css
     ], 2);
 const k2 = new Karte('By which year does the UN want to remove extreme poverty and halve poverty overall? ', 
     [
@@ -86,10 +79,10 @@ function mischen( arr ) {
 function aufdecken( stapel ) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
-		
+	/*	
         let karte = document.getElementById('Karte');
        // karte.textContent = "Thank you for playing :)"
-	/*	
+		
 		if(right == 7){
 			 karte.textContent = "Right answers: " +  right + " You are a sustainable homie" ;
 		}
