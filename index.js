@@ -1,38 +1,19 @@
-function Karte ( frage, antworten, richtige_antwort) {
+function Karte(frage, antworten, richtige_antwort) {
     this.frage = frage;
     this.antworten = antworten;
     this.richtige_antwort = richtige_antwort;
 }
 
-const k1 = new Karte('Wofür steht die Abkürzung SDG?', 
-    [
-        'Hallo', 
-        'Auto', 
-        'Sustainable Developement Goals', 
-        'Schuhe'
-    ], 2);
-const k2 = new Karte('Welcher Tag ist heute?', 
-    [
-        'Keine Ahnung', 
-        'Weihnachten', 
-        'der 9te', 
-        'Lass mich, will Kaffee'
-    ], 3);
-const k3 = new Karte('Wie findest du Tests?', 
-    [
-        'Gut', 
-        'Schlecht', 
-        'Geht so', 
-        'Geht wie?'
-    ], 3);
-
-let stapel = [k1, k2, k3];
+let stapel = [];
 
 let aktuelle_frage = {};
 
+let right = 0;
+let wrong = 0;
+
 const buchstaben = ['A', 'B', 'C', 'D'];
 
-function mischen( arr ) {
+function mischen(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -40,11 +21,19 @@ function mischen( arr ) {
     return arr;
 }
 
-function aufdecken( stapel ) {
+function aufdecken(stapel) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
+
         let karte = document.getElementById('Karte');
-        karte.textContent = 'Game leider over!';
+        if (right == 7) {
+            karte.textContent = "Right answers: " + right + " You are a sustainable homie";
+        } else if (wrong == 7) {
+            karte.textContent = "All your answers were wrong! You should read and learn more about the SDGs! ";
+        } else {
+            karte.textContent = "Right answers: " + right + "  Wrong Answers: " + wrong;
+        }
+
         aktuelle_frage = {};
         return;
     }
@@ -70,23 +59,38 @@ function aufdecken( stapel ) {
 
 }
 
-function beantworten( antwort ) {
+function beantworten(antwort) {
     // Bei richtiger Antwort:
-    if (antwort === aktuelle_frage.richtige_antwort) {
-		 document.getElementById('rightwrong').innerHTML = "Right answer!";
-        // alert("Richtig");
+    if (antwort === aktuelle_frage.richtig) {
+        document.getElementById('rightwrong').innerHTML = "Right answer!";
+        right = ++right;
     }
     // Bei falscher Antwort:
     else {
-        const richtig = aktuelle_frage.richtige_antwort;
+        const richtig = aktuelle_frage.richtig;
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
+        wrong = ++wrong;
     }
     aufdecken(stapel);
 }
 
-// Ablauf
+function fetch_json(filename) {
+    return new Promise((resolve) => {
+        fetch(filename).then(content => resolve(content.json()));
+    });
+}
 
-// 1. Kartenstapel mischen
-mischen(stapel);
-// 2. Nächste Frage stellen
-aufdecken(stapel);
+async function start(file) {
+    // Fragen sammeln
+    const a = await fetch_json(file);
+    for (const [key, value] of Object.entries(a)) {
+        stapel.push(value);
+    }
+    // SpielAblauf
+    // 1. Kartenstapel mischen
+    mischen(stapel);
+    // 2. Nächste Frage stellen
+    aufdecken(stapel);
+}
+
+start('fragen.json');

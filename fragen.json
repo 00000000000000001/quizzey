@@ -1,0 +1,62 @@
+{
+    "1":{
+        "frage": "What daily income is defined as extreme poverty?",
+        "antworten": [
+            "$2.50",
+            "3.50€",
+            "$1.25",
+            "5.00€"
+        ],
+        "richtig": 3
+    },
+    "2":{
+        "frage": "By which year does the UN want to remove extreme poverty and halve poverty overall?",
+        "antworten": [
+            "12",
+            "10",
+            "2",
+            "5"
+        ],
+        "richtig": 3
+    },
+    "3":{
+        "frage": "By 2020, maintain the genetic diversity of _, cultivated __ and farmed and domesticated ___ and their related wild species.",
+        "antworten": [
+            "animals, arts, cats",
+            "humans, fields, animals",
+            "crops, meat, vegetables",
+            "Seeds, plants, animals"
+        ],
+        "richtig": 3
+    },
+    "4":{
+        "frage": "How many people in the world auffer from hunger?",
+        "antworten": [
+            "3 in 10 people",
+            "1 in 10 people",
+            "20 in 100 people",
+            "15 in 100 people"
+        ],
+        "richtig": 1
+    },
+    "5":{
+        "frage": "How many people die prematurely in Europe, due to air pollution annually?",
+        "antworten": [
+            "100.000",
+            "400.000",
+            "10.000",
+            "50.000"
+        ],
+        "richtig": 1
+    },
+    "6":{
+        "frage": "What does SDG stand for?",
+        "antworten": [
+            "Sweet Dog Game",
+            "Sustainable Development Gays",
+            "Sustainable Development Goals",
+            "Suspicous Dolphin Goals"
+        ],
+        "richtig": 2
+    }
+}
