@@ -16,6 +16,8 @@ const buchstaben = ['A', 'B', 'C', 'D'];
 let kategorien = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 let beantwortet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
+let cursor = 0;
+
 // function mischen(arr) {
 //     for (let i = arr.length - 1; i > 0; i--) {
 //         const j = Math.floor(Math.random() * (i + 1));
@@ -25,11 +27,12 @@ let beantwortet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 // }
 
 function update_nav(){
-    for (let i = 0; i < kategorien.length; i++) {
+    for (let i = cursor; i < cursor + 1; i++) {
         let kat = document.getElementById('cat' + i);
         let num = kat.getElementsByClassName('number')[0];
         if (beantwortet[i] === kategorien[i]){
             num.innerHTML = 'OK';
+            cursor++;
         }else{
             num.innerHTML = beantwortet[i] + '/' + kategorien[i];
         }
@@ -37,22 +40,10 @@ function update_nav(){
     }
 }
 
-function init_nav(arr){
-    // setup array
-    for (let i = 0; i < arr.length; i++) {
-        kategorien[arr[i].kategorie-1]++;
-    }
-    // Anzahl der Fragen pro Kategorie anzeigen
-    update_nav();
-}
-
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
-function maxs(arr, l){
+function max_cat(arr, l){
     let max = l;
     for (let i = l; i < arr.length; i++) {
-        // console.log(arr[i].kategorie);
-        // console.log(arr[min].kategorie);
-
         if (arr[i].kategorie > arr[max].kategorie){
             max = i;
         }
@@ -64,7 +55,7 @@ function sortieren(arr) {
     let min = 0;
     for (let i = 0; i < arr.length; i++) {
         let tmp = arr[i];
-        min = maxs(arr, i);
+        min = max_cat(arr, i);
         arr[i] = arr[min];
         arr[min] = tmp;
     }
@@ -139,13 +130,16 @@ async function start(file) {
         stapel.push(value);
         
     }
-    
+    // Kategorien initialisieren (linke goals-leiste)
+    for (let i = 0; i < stapel.length; i++) {
+        kategorien[stapel[i].kategorie-1]++;
+    }
+    update_nav();
+
     // SpielAblauf
-    // 1. Kartenstapel mischen
+    // 1. Kartenstapel sortieren
     sortieren(stapel);
-    // 2. Kategorien initialisieren (linke goals-leiste)
-    init_nav(stapel);
-    // 3. Nächste Frage stellen
+    // 2. Nächste Frage stellen
     aufdecken(stapel);
 }
 
