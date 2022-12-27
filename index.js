@@ -13,10 +13,59 @@ let wrong = 0;
 
 const buchstaben = ['A', 'B', 'C', 'D'];
 
-function mischen(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+let kategorien = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+// function mischen(arr) {
+//     for (let i = arr.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [arr[i], arr[j]] = [arr[j], arr[i]];
+//     }
+//     return arr;
+// }
+
+function update_nav(){
+    for (let i = 0; i < kategorien.length; i++) {
+        let kat = document.getElementById('cat' + i);
+        let num = kat.getElementsByClassName('number')[0];
+        if (kategorien[i] === 0){
+            num.innerHTML = 'OK';
+        }else{
+            num.innerHTML = kategorien[i];
+        }
+        
+    }
+}
+
+function init_nav(arr){
+    // setup array
+    for (let i = 0; i < arr.length; i++) {
+        kategorien[arr[i].kategorie-1]++;
+    }
+    // Anzahl der Fragen pro Kategorie anzeigen
+    update_nav();
+}
+
+// sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
+function mins(arr, l){
+    let min = l;
+    for (let i = l; i < arr.length; i++) {
+        // console.log(arr[i].kategorie);
+        // console.log(arr[min].kategorie);
+
+        if (arr[i].kategorie < arr[min].kategorie){
+            min = i;
+        }
+    }
+    return min;
+}
+
+function sortieren(arr) {
+    let min = 0;
+    for (let i = 0; i < arr.length; i++) {
+        let tmp = arr[i];
+        min = mins(arr, i);
+        arr[i] = arr[min];
+        arr[min] = tmp;
     }
     return arr;
 }
@@ -71,6 +120,8 @@ function beantworten(antwort) {
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
         wrong = ++wrong;
     }
+    kategorien[aktuelle_frage.kategorie]--;
+    update_nav();
     aufdecken(stapel);
 }
 
@@ -85,11 +136,15 @@ async function start(file) {
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
         stapel.push(value);
+        
     }
+    
     // SpielAblauf
     // 1. Kartenstapel mischen
-    mischen(stapel);
-    // 2. Nächste Frage stellen
+    sortieren(stapel);
+    // 2. Kategorien initialisieren (linke goals-leiste)
+    init_nav(stapel);
+    // 3. Nächste Frage stellen
     aufdecken(stapel);
 }
 
