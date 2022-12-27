@@ -1,77 +1,137 @@
 <!DOCTYPE html>
-    <head>
+
+<head>
 	<title> SDG Prototype </title>
-        <style>
-			body{
-			text-align:center;
+	<style>
+		/* * {
+			border: solid thin black;
+		} */
+
+		body {
+			text-align: center;
 			background-color: #f8fff2;
-			}
-			
-			h1{
-			 color: #007ba8;
-			}
-			
-			#a, #b, #c, #d{
-			color:#809d67;
+		}
+
+		#mainpage {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: 5em repeat(10, 1fr) 5em;
+			border: solid thin black;
+		}
+
+		header {
+			grid-column: 1/13;
+			grid-row: 5em/1;
+		}
+
+		nav {
+			background-color: #809d67;
+			grid-column: 1/3;
+			grid-row: 2/13;
+		}
+
+		#Karte {
+			grid-column: 3/13;
+			grid-row: 2/13;
+			color: #007ba8;
+			font-weight: bold;
+			font-size: 25px;
+			margin: 25px;
+		}
+
+		h1 {
+			color: #007ba8;
+		}
+
+		#a,
+		#b,
+		#c,
+		#d {
+			color: #809d67;
 			font-size: 25px;
 			padding: 1px;
 			margin: 25px;
 			font-weight: bold;
-			}
-			
-			#a:hover {
-			 color:#699c3d;
-			 font-size: 30px;
-			}
-			#b:hover {
-			  color: #699c3d;
-			  font-size: 30px;
-			}
-			#c:hover {
-			 color:#699c3d;
-			 font-size: 30px;
-			}
-			#d:hover {
-			  color:#699c3d;
-			  font-size: 30px;
-			}
-			
-			#Frage{
-			color:#007ba8;
-			font-weight: bold;
-			font-size:30px;
-			margin-top: 50px;
-			margin-bottom: 10px;
-			}
-			
-			#rightwrong{
-			color: #809d67;
-			font-weight: bold;
-			font-size:25px;
-			margin: 25px;
-			}
-			
-			#Karte{
+		}
+
+		#a:hover {
+			color: #699c3d;
+			font-size: 30px;
+		}
+
+		#b:hover {
+			color: #699c3d;
+			font-size: 30px;
+		}
+
+		#c:hover {
+			color: #699c3d;
+			font-size: 30px;
+		}
+
+		#d:hover {
+			color: #699c3d;
+			font-size: 30px;
+		}
+
+		#Frage {
 			color: #007ba8;
 			font-weight: bold;
-			font-size:25px;
-			margin: 25px;
-			}
+			font-size: 30px;
+			margin-top: 50px;
+			margin-bottom: 10px;
+		}
 
-        </style>
-        <script defer src="index.js"></script>
-    </head>
-    <body>
-        <h1>Learn more about the SDGs - Take the SDG Quiz</h1>
-        <div id="Karte"> <!-- ober div fuer frage und antwort-->
-            <i><p id="Frage"></p></i> <!--div fuer frage-->
-            <div id="Antworten"> <!--div fuer  antwort-->
-                <div id="a" onclick="beantworten(0)"></div>
-                <div id="b" onclick="beantworten(1)"></div>
-                <div id="c" onclick="beantworten(2)"></div>
-                <div id="d" onclick="beantworten(3)"></div>
+		#rightwrong {
+			color: #809d67;
+			font-weight: bold;
+			font-size: 25px;
+			margin: 25px;
+		}
+		.sector{
+			border: solid thin black;
+		}
+	</style>
+	<script defer src="index.js"></script>
+</head>
+
+<body>
+	<div id="mainpage">
+		<header>
+			<h1>Learn more about the SDGs - Take the SDG Quiz</h1>
+		</header>
+		<nav>
+			<div class="sector">1</div>
+			<div class="sector">2</div>
+			<div class="sector">3</div>
+			<div class="sector">4</div>
+			<div class="sector">5</div>
+			<div class="sector">6</div>
+			<div class="sector">7</div>
+			<div class="sector">8</div>
+			<div class="sector">9</div>
+			<div class="sector">10</div>
+			<div class="sector">11</div>
+			<div class="sector">12</div>
+			<div class="sector">13</div>
+			<div class="sector">14</div>
+			<div class="sector">15</div>
+			<div class="sector">16</div>
+			<div class="sector">17</div>
+		</nav>
+
+		<div id="Karte">
+			<i>
+				<p id="Frage"></p>
+			</i>
+			<div id="Antworten">
+				<div id="a" onclick="beantworten(0)"></div>
+				<div id="b" onclick="beantworten(1)"></div>
+				<div id="c" onclick="beantworten(2)"></div>
+				<div id="d" onclick="beantworten(3)"></div>
 				<div id="rightwrong"> </div>
-            </div>
-			<div id="ergebniss"> </div>
-        </div>
-    </body>
+			</div>
+			<div id="ergebniss"></div>
+		</div>
+	</div>
+</body>
