@@ -46,24 +46,24 @@ function init_nav(arr){
 }
 
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
-function mins(arr, l){
-    let min = l;
+function maxs(arr, l){
+    let max = l;
     for (let i = l; i < arr.length; i++) {
         // console.log(arr[i].kategorie);
         // console.log(arr[min].kategorie);
 
-        if (arr[i].kategorie < arr[min].kategorie){
-            min = i;
+        if (arr[i].kategorie > arr[max].kategorie){
+            max = i;
         }
     }
-    return min;
+    return max;
 }
 
 function sortieren(arr) {
     let min = 0;
     for (let i = 0; i < arr.length; i++) {
         let tmp = arr[i];
-        min = mins(arr, i);
+        min = maxs(arr, i);
         arr[i] = arr[min];
         arr[min] = tmp;
     }
@@ -120,7 +120,7 @@ function beantworten(antwort) {
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
         wrong = ++wrong;
     }
-    kategorien[aktuelle_frage.kategorie]--;
+    kategorien[aktuelle_frage.kategorie-1]--;
     update_nav();
     aufdecken(stapel);
 }
