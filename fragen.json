@@ -64,5 +64,16 @@
         ],
         "richtig": 2,
         "kategorie": 4
+    },
+    "7":{
+        "frage": "Testfrage",
+        "antworten": [
+            "Testantwort 1",
+            "Testantwort 2",
+            "Testantwort 3",
+            "Testantwort 4"
+        ],
+        "richtig": 2,
+        "kategorie": 1
     }
 }

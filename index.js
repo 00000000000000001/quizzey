@@ -14,6 +14,7 @@ let wrong = 0;
 const buchstaben = ['A', 'B', 'C', 'D'];
 
 let kategorien = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+let beantwortet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 // function mischen(arr) {
 //     for (let i = arr.length - 1; i > 0; i--) {
@@ -27,10 +28,10 @@ function update_nav(){
     for (let i = 0; i < kategorien.length; i++) {
         let kat = document.getElementById('cat' + i);
         let num = kat.getElementsByClassName('number')[0];
-        if (kategorien[i] === 0){
+        if (beantwortet[i] === kategorien[i]){
             num.innerHTML = 'OK';
         }else{
-            num.innerHTML = kategorien[i];
+            num.innerHTML = beantwortet[i] + '/' + kategorien[i];
         }
         
     }
@@ -120,7 +121,7 @@ function beantworten(antwort) {
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
         wrong = ++wrong;
     }
-    kategorien[aktuelle_frage.kategorie-1]--;
+    beantwortet[aktuelle_frage.kategorie-1]++;
     update_nav();
     aufdecken(stapel);
 }
