@@ -27,7 +27,7 @@ let cursor = 0;
 // }
 
 function update_nav(){
-    for (let i = cursor; i < cursor + 1; i++) {
+    for (let i = cursor; i < cursor + 1 && cursor < 17; i++) {
         let kat = document.getElementById('cat' + i);
         let num = kat.getElementsByClassName('number')[0];
         if (beantwortet[i] === kategorien[i]){
