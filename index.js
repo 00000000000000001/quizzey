@@ -28,7 +28,7 @@ let cursor = 0;
 
 function update_nav(){
     for (let i = cursor; i < cursor + 1 && cursor < 17; i++) {
-        let kat = document.getElementById('cat' + i);
+        let kat = document.getElementById(i);
         let num = kat.getElementsByClassName('number')[0];
         if (beantwortet[i] === kategorien[i]){
             num.innerHTML = 'OK';
@@ -41,25 +41,25 @@ function update_nav(){
 }
 
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
-function max_cat(arr, l){
+function max_cat(stapel, l){
     let max = l;
-    for (let i = l; i < arr.length; i++) {
-        if (arr[i].kategorie > arr[max].kategorie){
+    for (let i = l; i < stapel.length; i++) {
+        if (stapel[i].kategorie > stapel[max].kategorie){
             max = i;
         }
     }
     return max;
 }
 
-function sortieren(arr) {
+function sortieren(stapel) {
     let min = 0;
-    for (let i = 0; i < arr.length; i++) {
-        let tmp = arr[i];
-        min = max_cat(arr, i);
-        arr[i] = arr[min];
-        arr[min] = tmp;
+    for (let i = 0; i < stapel.length; i++) {
+        let tmp = stapel[i];
+        min = max_cat(stapel, i);
+        stapel[i] = stapel[min];
+        stapel[min] = tmp;
     }
-    return arr;
+    return stapel;
 }
 
 function aufdecken(stapel) {
