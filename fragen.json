@@ -7,7 +7,7 @@
             "1 in 17 businesses",
             "1 in 9 business"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 16
     },
     "2":{
@@ -18,7 +18,7 @@
             "1/2 - mostly woman",
             "1/2 - mostly men"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 16
     },
     "3":{
@@ -29,7 +29,7 @@
             "1952",
             "1974"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 16
     },
     "4":{
@@ -40,7 +40,7 @@
             "Nothing at all",
             "The economic growth"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 17
     },
     "5":{
@@ -51,7 +51,7 @@
             "2%",
             "11%"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 17
     },
     "6":{
@@ -62,7 +62,7 @@
             "Send money to their family",
             "Send money to their country of origin"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 17
     },
     "7":{
@@ -73,7 +73,7 @@
             "15%",
             "56%"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 4
     },
     "8":{
@@ -84,7 +84,7 @@
             "57 Million Children",
             "187 Million Children"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 4
     },
     "9":{
@@ -95,7 +95,7 @@
             "Eliminate all homework in education",
             "Eliminate all technology in education"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 4
     },
     "10":{
@@ -106,7 +106,7 @@
             "More than 1 in 20 Woman",
             "More than 1 in 8 Woman"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 5
     },
     "11":{
@@ -117,7 +117,7 @@
             "82%",
             "18%"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 5
     },
     "12":{
@@ -128,7 +128,7 @@
             "1 in 3 young woman",
             "1 in 20 young woman"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 5
     },
     "13":{
@@ -139,7 +139,7 @@
             "Over 35% have been lost",
             "Over 55% have been lost"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 6
     },
     "14":{
@@ -150,7 +150,7 @@
             "Over 733+ Thousand people",
             "Over 158+ Thousand people"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 6
     },
     "15":{
@@ -161,7 +161,7 @@
             "Not one of the most basic human needs",
             "One of the safety needs for humans"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 6
     },
     "16":{
@@ -172,7 +172,7 @@
             "has already been achieved to a large extent",
             "none of the above"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 1
     },
     "17":{
@@ -183,7 +183,7 @@
             "Bosnia-Herzegovina",
             "none of the above"
         ],
-        "richtig": 2,
+        "richtig": 1,
         "kategorie": 1
     },
     "18":{
@@ -194,7 +194,7 @@
             "every eighth woman",
             "none of the above"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 1
     },
     "19":{
@@ -205,7 +205,7 @@
             "From all three diseases combined",
             "none of the above"
         ],
-        "richtig": 3,
+        "richtig": 2,
         "kategorie": 2
     },
     "20":{
@@ -216,7 +216,7 @@
             "one in nine",
             "one in a hundred"
         ],
-        "richtig": 3,
+        "richtig": 2,
         "kategorie": 2
     },
     "21":{
@@ -227,7 +227,7 @@
             "To be fed with a bottle",
             "one in a hundred"
         ],
-        "richtig": 1,
+        "richtig": 0,
         "kategorie": 3
     },
     "22":{
@@ -238,7 +238,7 @@
             "10 minutes",
             "60 minutes"
         ],
-        "richtig": 4,
+        "richtig": 3,
         "kategorie": 3
     },
     "23":{
@@ -249,7 +249,7 @@
             "Causes headaches",
             "All of the above and more!"
         ],
-        "richtig": 4,
+        "richtig": 3,
         "kategorie": 3
     }
 }

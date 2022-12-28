@@ -18,6 +18,13 @@ let beantwortet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
 
 let cursor = 0;
 
+// die Farben der einzelnen SDG's
+const colors = ['#ec1629', '#d4a124', '#229c46', '#c41930', '#f03e27', '#00b0da', '#fdb80b', '#901135', '#f36d20', '#e20c85', '#f99e21', '#d08e25', '#46783c', '#007ebd', '#3bb247', '#00548c', '#113368'];
+
+function changeColor(color) {
+    document.body.style.background = color;
+}
+
 // function mischen(arr) {
 //     for (let i = arr.length - 1; i > 0; i--) {
 //         const j = Math.floor(Math.random() * (i + 1));
@@ -31,8 +38,8 @@ function update_nav(){
         let kat = document.getElementById(i);
         let num = kat.getElementsByClassName('number')[0];
         if (beantwortet[i] === kategorien[i]){
-            num.innerHTML = 'OK';
-            cursor++;
+            num.innerHTML = '&#10003;';
+            changeColor(colors[++cursor]);
         }else{
             num.innerHTML = beantwortet[i] + '/' + kategorien[i];
         }
