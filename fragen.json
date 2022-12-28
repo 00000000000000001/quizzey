@@ -1,79 +1,255 @@
 {
     "1":{
-        "frage": "What daily income is defined as extreme poverty?",
+        "frage": "There is corruption in every region, how many businesses have revived bribe request from public officials?",
         "antworten": [
-            "$2.50",
-            "3.50€",
-            "$1.25",
-            "5.00€"
+            "1 in 6 businesses",
+            "1 in 22 businesses",
+            "1 in 17 businesses",
+            "1 in 9 business"
         ],
-        "richtig": 3,
-        "kategorie": 6
+        "richtig": 1,
+        "kategorie": 16
     },
     "2":{
-        "frage": "By which year does the UN want to remove extreme poverty and halve poverty overall?",
+        "frage": "How much of the world population has a fear of walking alone at night in their neighborhood?",
         "antworten": [
-            "12",
-            "10",
-            "2",
-            "5"
+            "1/3 - mostly woman",
+            "1/3 - mostly men",
+            "1/2 - mostly woman",
+            "1/2 - mostly men"
         ],
-        "richtig": 3,
-        "kategorie": 1
+        "richtig": 1,
+        "kategorie": 16
     },
     "3":{
-        "frage": "By 2020, maintain the genetic diversity of _, cultivated __ and farmed and domesticated ___ and their related wild species.",
+        "frage": "The world is witnessing the largest number of violent conflicts since…",
         "antworten": [
-            "animals, arts, cats",
-            "humans, fields, animals",
-            "crops, meat, vegetables",
-            "Seeds, plants, animals"
+            "1946",
+            "1965",
+            "1952",
+            "1974"
         ],
-        "richtig": 3,
-        "kategorie": 5
+        "richtig": 1,
+        "kategorie": 16
     },
     "4":{
-        "frage": "How many people in the world auffer from hunger?",
+        "frage": "Rising debt burdens threatens…",
         "antworten": [
-            "3 in 10 people",
-            "1 in 10 people",
-            "20 in 100 people",
-            "15 in 100 people"
+            "Developing countries pandemic recovery",
+            "Wealthy countries development",
+            "Nothing at all",
+            "The economic growth"
+        ],
+        "richtig": 1,
+        "kategorie": 17
+    },
+    "5":{
+        "frage": "How much did the use of internet uptake from 2019 to 2021?",
+        "antworten": [
+            "9%",
+            "5%",
+            "2%",
+            "11%"
+        ],
+        "richtig": 1,
+        "kategorie": 17
+    },
+    "6":{
+        "frage": "Migrants should not have to…",
+        "antworten": [
+            "Pay high fees to send money to their family in their country of origin",
+            "Pay low fees to send money to their family in their country of origin",
+            "Send money to their family",
+            "Send money to their country of origin"
+        ],
+        "richtig": 1,
+        "kategorie": 17
+    },
+    "7":{
+        "frage": "How many primary schools lack electricity, drinking water and basic sanitation?",
+        "antworten": [
+            "25%",
+            "75%",
+            "15%",
+            "56%"
+        ],
+        "richtig": 1,
+        "kategorie": 4
+    },
+    "8":{
+        "frage": "How many children have missed more than half of their in-class instruction due to Covid-19?",
+        "antworten": [
+            "147 Million children",
+            "17 Million Children",
+            "57 Million Children",
+            "187 Million Children"
+        ],
+        "richtig": 1,
+        "kategorie": 4
+    },
+    "9":{
+        "frage": "Which of these target have to be meet for quality education?",
+        "antworten": [
+            "Eliminate all discrimination in education",
+            "Eliminate all teachers in education",
+            "Eliminate all homework in education",
+            "Eliminate all technology in education"
+        ],
+        "richtig": 1,
+        "kategorie": 4
+    },
+    "10":{
+        "frage": "How many Woman have been subjected to partner violence at least once in their lifetime?",
+        "antworten": [
+            "More than 1 in 4 woman",
+            "More than 1 in 10 Woman",
+            "More than 1 in 20 Woman",
+            "More than 1 in 8 Woman"
+        ],
+        "richtig": 1,
+        "kategorie": 5
+    },
+    "11":{
+        "frage": "How many woman make their own informed choices about sex and reproductive healthcare?",
+        "antworten": [
+            "57%",
+            "36%",
+            "82%",
+            "18%"
+        ],
+        "richtig": 1,
+        "kategorie": 5
+    },
+    "12":{
+        "frage": "How many young woman were married in childhood in 2021?",
+        "antworten": [
+            "1 in 5 young woman",
+            "1 in 10 young woman",
+            "1 in 3 young woman",
+            "1 in 20 young woman"
+        ],
+        "richtig": 1,
+        "kategorie": 5
+    },
+    "13":{
+        "frage": "How many wetlands of the planet have been lost in the last 300 years?",
+        "antworten": [
+            "Over 85% have been lost",
+            "Over 15% have been lost",
+            "Over 35% have been lost",
+            "Over 55% have been lost"
+        ],
+        "richtig": 1,
+        "kategorie": 6
+    },
+    "14":{
+        "frage": "How many people live in countries with high and critical levels of water stress?",
+        "antworten": [
+            "Over 733+ Million people",
+            "Over 158+ Million people",
+            "Over 733+ Thousand people",
+            "Over 158+ Thousand people"
+        ],
+        "richtig": 1,
+        "kategorie": 6
+    },
+    "15":{
+        "frage": "Access to safe water, sanitation and hygiene is…",
+        "antworten": [
+            "One of the most basic needs for humans regarding health and well-being",
+            "One of the most basic needs for humans regarding warmth and rest",
+            "Not one of the most basic human needs",
+            "One of the safety needs for humans"
+        ],
+        "richtig": 1,
+        "kategorie": 6
+    },
+    "16":{
+        "frage": "What is true? The fight against poverty",
+        "antworten": [
+            "is the ultimate goal of the 2030 Agenda",
+            "is not a prerequisite for sustainable development",
+            "has already been achieved to a large extent",
+            "none of the above"
+        ],
+        "richtig": 1,
+        "kategorie": 1
+    },
+    "17":{
+        "frage": "Which country in Europe has the highest proportion of people living in absolute poverty?",
+        "antworten": [
+            "Bulgaria",
+            "Georgia",
+            "Bosnia-Herzegovina",
+            "none of the above"
+        ],
+        "richtig": 2,
+        "kategorie": 1
+    },
+    "18":{
+        "frage": "In poor countries, the birth rate is often high. How many women in developing countries do not have access to contraceptives?",
+        "antworten": [
+            "every second woman",
+            "every fourth woman",
+            "every eighth woman",
+            "none of the above"
+        ],
+        "richtig": 1,
+        "kategorie": 1
+    },
+    "19":{
+        "frage": "Every year, more people die of hunger than",
+        "antworten": [
+            "Aids",
+            "Malaria and tuberculosis together",
+            "From all three diseases combined",
+            "none of the above"
+        ],
+        "richtig": 3,
+        "kategorie": 2
+    },
+    "20":{
+        "frage": "How many people worldwide have to go to sleep hungry every night?",
+        "antworten": [
+            "one in three",
+            "one in five",
+            "one in nine",
+            "one in a hundred"
+        ],
+        "richtig": 3,
+        "kategorie": 2
+    },
+    "21":{
+        "frage": "What is the best nutrition for a newborn?",
+        "antworten": [
+            "Breastfed",
+            "Drinking water",
+            "To be fed with a bottle",
+            "one in a hundred"
         ],
         "richtig": 1,
         "kategorie": 3
     },
-    "5":{
-        "frage": "How many people die prematurely in Europe, due to air pollution annually?",
+    "22":{
+        "frage": "How many minutes of exercise should children do every day?",
         "antworten": [
-            "100.000",
-            "400.000",
-            "10.000",
-            "50.000"
+            "Children don't need to exercise",
+            "1000 minutes",
+            "10 minutes",
+            "60 minutes"
         ],
-        "richtig": 1,
-        "kategorie": 2
+        "richtig": 4,
+        "kategorie": 3
     },
-    "6":{
-        "frage": "What does SDG stand for?",
+    "23":{
+        "frage": "How can air pollution affect our health?",
         "antworten": [
-            "Sweet Dog Game",
-            "Sustainable Development Gays",
-            "Sustainable Development Goals",
-            "Suspicous Dolphin Goals"
+            "Irritates eyes, ears, nose, and throats",
+            "Makes asthma worse and reduces lung function",
+            "Causes headaches",
+            "All of the above and more!"
         ],
-        "richtig": 2,
-        "kategorie": 4
-    },
-    "7":{
-        "frage": "Testfrage",
-        "antworten": [
-            "Testantwort 1",
-            "Testantwort 2",
-            "Testantwort 3",
-            "Testantwort 4"
-        ],
-        "richtig": 2,
-        "kategorie": 1
+        "richtig": 4,
+        "kategorie": 3
     }
 }
