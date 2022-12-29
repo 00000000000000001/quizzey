@@ -14,13 +14,11 @@
 		* {
 			font-family: "Roadgeek 2005 Series B";
 			/* border: dotted thin black; */
+			box-sizing: border-box;
 		}
 
 		body {
-			-webkit-transition: background-color 1s ease-out;
-			/* -moz-transition: background-color 1s ease-out;
-            -o-transition: background-color 1s ease-out;
-            transition: background-color 1s ease-out; */
+            transition: background-color 1s ease-out;
 			text-align: center;
 			background-color: #f8fff2;
 		}
@@ -28,252 +26,118 @@
 
 		#mainpage {
 			display: grid;
-			grid-template-columns: 10% repeat(10, 1fr) 10%;
-			grid-template-rows: 5em, repeat(3, 1fr);
+			grid-template-columns: 7% repeat(17, 1fr) 7%;
+			grid-template-rows: repeat(1, 1fr) 70vh;
 		}
 
-		/* #logo {
-			grid-column: 10em;
-			grid-row: 1/2;
-			background-color: #f3f3f3;
-		} */
-
-		#logo img {
-			height: 100%;
-		}
-
-		header { /*ist eig nav*/
-			grid-column: 2/12;
-			grid-row: 0/1;
-		}
-
-		nav {
+		header{
 			/* background-color: #00548c; */
-			grid-column: 1/13;
 			grid-row: 1/2;
+			grid-column: 1/20;
 			display: flex;
-			/* justify-content: flex-start;
-			flex-wrap: wrap; */
+			flex-wrap: wrap;
+			/* max-height: 10em; */
+			/* box-sizing: border-box; */
 		}
 
-		#Karte {
-			grid-column: 2/12;
-			grid-row: 2/13;
-			color: #007ba8;
+		.sdg{
+			width: calc(100% / 17);
+			display: flex;
+		}
+
+		article{
+			/* background-color:#229c46; */
+			grid-row: 2/3;
+			grid-column: 2/18;
+			min-height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#karte {
+			/* background-color: aqua; */
 			font-weight: bold;
 			font-size: 25px;
-			margin: 25px;
 		}
 
-		h1 {
-			color: #007ba8;
+		#frage {
+			font-size: 30px;
 		}
 
 		#a,
 		#b,
 		#c,
 		#d {
-			color: #809d67;
-			font-size: 25px;
-			padding: 1px;
 			margin: 25px;
-			font-weight: bold;
+			min-height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		#a:hover {
-			color: #699c3d;
 			font-size: 30px;
 		}
 
 		#b:hover {
-			color: #699c3d;
 			font-size: 30px;
 		}
 
 		#c:hover {
-			color: #699c3d;
 			font-size: 30px;
 		}
 
 		#d:hover {
-			color: #699c3d;
 			font-size: 30px;
-		}
-
-		#Frage {
-			color: #007ba8;
-			font-weight: bold;
-			font-size: 30px;
-			margin-top: 50px;
-			margin-bottom: 10px;
 		}
 
 		#rightwrong {
-			color: #809d67;
-			font-weight: bold;
-			font-size: 25px;
-			margin: 25px;
+
 		}
 
-		.category {
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			color: #ffffff;
-			transition: visibility 0.3s linear, opacity 0.3s linear;
-			/* padding: 0.5em; */
-		}
-
-		.category img {
-			width: 5em;
-		}
-
-		.number {
-			text-align: right;
-			width: 100%;
-		}
-
-		@media (max-width: 700px) {
-			#Karte {
-				grid-column: 1/13;
-				grid-row: 2/13;
-			}
-
-			nav {
-				grid-column: 1/13;
-				grid-row: 1/2;
-				display: flex;
-				justify-content: flex-start;
-				flex-wrap: wrap;
-			}
-		}
 	</style>
 	<script defer src="index.js"></script>
 </head>
 
 <body>
 	<div id="mainpage">
-
 		<header>
-			<!-- <h1>Learn more about the SDGs - Take the SDG Quiz</h1> -->
+
+				<img src="./resources/sdg_1.svg" style="visibility: hidden;" class="sdg" id="0">
+				<img src="./resources/sdg_2.svg" style="visibility: hidden;" class="sdg" id="1">
+				<img src="./resources/sdg_3.svg" style="visibility: hidden;" class="sdg" id="2">
+				<img src="./resources/sdg_4.svg" style="visibility: hidden;" class="sdg" id="3">
+				<img src="./resources/sdg_5.svg" style="visibility: hidden;" class="sdg" id="4">
+				<img src="./resources/sdg_6.svg" style="visibility: hidden;" class="sdg" id="5">
+				<img src="./resources/sdg_7.svg" style="visibility: hidden;" class="sdg" id="6">
+				<img src="./resources/sdg_8.svg" style="visibility: hidden;" class="sdg" id="7">
+				<img src="./resources/sdg_9.svg" style="visibility: hidden;" class="sdg" id="8">
+				<img src="./resources/sdg_10.svg" style="visibility: hidden;" class="sdg" id="9">
+				<img src="./resources/sdg_11.svg" style="visibility: hidden;" class="sdg" id="10">
+				<img src="./resources/sdg_12.svg" style="visibility: hidden;" class="sdg" id="11">
+				<img src="./resources/sdg_13.svg" style="visibility: hidden;" class="sdg" id="12">
+				<img src="./resources/sdg_14.svg" style="visibility: hidden;" class="sdg" id="13">
+				<img src="./resources/sdg_15.svg" style="visibility: hidden;" class="sdg" id="14">
+				<img src="./resources/sdg_16.svg" style="visibility: hidden;" class="sdg" id="15">
+				<img src="./resources/sdg_17.svg" style="visibility: hidden;" class="sdg" id="16">
 		</header>
-		<nav>
-			<div class="category" style="background-color: #ec1629; visibility: hidden;" id="0">
-				<img src="./resources/sdg_1.svg">
-				<div class="number">
 
+		<article>
+			<div id="karte">
+				<p id="frage"></p>
+				<div id="Antworten">
+					<div id="a" onclick="beantworten(0)"></div>
+					<div id="b" onclick="beantworten(1)"></div>
+					<div id="c" onclick="beantworten(2)"></div>
+					<div id="d" onclick="beantworten(3)"></div>
+					<div id="rightwrong"> </div>
 				</div>
+				<div id="ergebnis"></div>
 			</div>
-			<div class="category" style="background-color: #d4a124; visibility: hidden;" id="1">
-				<img src="./resources/sdg_2.svg">
-				<div class="number">
+		</article>
 
-				</div>
-			</div>
-			<div class="category" style="background-color: #229c46; visibility: hidden;" id="2">
-				<img src="./resources/sdg_3.svg">
-				<div class="number">
+		
 
-				</div>
-			</div>
-			<div class="category" style="background-color: #c41930; visibility: hidden;" id="3">
-				<img src="./resources/sdg_4.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #f03e27; visibility: hidden;" id="4">
-				<img src="./resources/sdg_5.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #00b0da; visibility: hidden;" id="5">
-				<img src="./resources/sdg_6.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #fdb80b; visibility: hidden;" id="6">
-				<img src="./resources/sdg_7.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #901135; visibility: hidden;" id="7">
-				<img src="./resources/sdg_8.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #f36d20; visibility: hidden;" id="8">
-				<img src="./resources/sdg_9.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #e20c85; visibility: hidden;" id="9">
-				<img src="./resources/sdg_10.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #f99e21; visibility: hidden;" id="10">
-				<img src="./resources/sdg_11.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #d08e25; visibility: hidden;" id="11">
-				<img src="./resources/sdg_12.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #46783c; visibility: hidden;" id="12">
-				<img src="./resources/sdg_13.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #007ebd; visibility: hidden;" id="13">
-				<img src="./resources/sdg_14.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #3bb247; visibility: hidden;" id="14">
-				<img src="./resources/sdg_15.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #00548c; visibility: hidden;" id="15">
-				<img src="./resources/sdg_16.svg">
-				<div class="number">
-
-				</div>
-			</div>
-			<div class="category" style="background-color: #113368; visibility: hidden;" id="16">
-				<img src="./resources/sdg_17.svg">
-				<div class="number">
-
-				</div>
-			</div>
-		</nav>
-
-		<div id="Karte">
-			<i>
-				<p id="Frage"></p>
-			</i>
-			<div id="Antworten">
-				<div id="a" onclick="beantworten(0)"></div>
-				<div id="b" onclick="beantworten(1)"></div>
-				<div id="c" onclick="beantworten(2)"></div>
-				<div id="d" onclick="beantworten(3)"></div>
-				<div id="rightwrong"> </div>
-			</div>
-			<div id="ergebnis"></div>
-		</div>
 	</div>
 </body>

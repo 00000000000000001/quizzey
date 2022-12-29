@@ -74,14 +74,17 @@ function aufdecken(stapel) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
         changeColor('#f8fff2');
-        let karte = document.getElementById('Karte');
+        
+        const auswertung = document.createElement('p');
         if (right == 7) {
-            karte.textContent = "Right answers: " + right + " You are a sustainable homie";
+            auswertung.textContent = "Right answers: " + right + " You are a sustainable homie";
         } else if (wrong == 7) {
-            karte.textContent = "All your answers were wrong! You should read and learn more about the SDGs! ";
+            auswertung.textContent = "All your answers were wrong! You should read and learn more about the SDGs! ";
         } else {
-            karte.textContent = "Right answers: " + right + "  Wrong Answers: " + wrong;
+            auswertung.textContent = "Right answers: " + right + "  Wrong Answers: " + wrong;
         }
+       document.getElementById('karte').innerHTML = "";
+       document.getElementById('karte').appendChild(auswertung);
 
         aktuelle_frage = {};
         return;
@@ -90,7 +93,7 @@ function aufdecken(stapel) {
     aktuelle_frage = stapel.pop();
 
     // Frage anzeigen
-    let p = document.getElementById('Frage');
+    let p = document.getElementById('frage');
     p.textContent = aktuelle_frage.frage;
 
     // Antworten anzeigen
@@ -144,7 +147,7 @@ async function start(file) {
     }
     update_nav();
     changeColor(colors[0]);
-    document.getElementById('Frage').style.color = 'white';
+    document.getElementById('frage').style.color = 'white';
     document.getElementById('a').style.color = 'white';
     document.getElementById('b').style.color = 'white';
     document.getElementById('c').style.color = 'white';
