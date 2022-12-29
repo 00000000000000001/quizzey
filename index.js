@@ -25,13 +25,13 @@ function changeColor(color) {
     document.body.style.background = color;
 }
 
-// function mischen(arr) {
-//     for (let i = arr.length - 1; i > 0; i--) {
-//         const j = Math.floor(Math.random() * (i + 1));
-//         [arr[i], arr[j]] = [arr[j], arr[i]];
-//     }
-//     return arr;
-// }
+function mischen(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
 
 function update_nav(){
     for (let i = cursor; i < cursor + 1 && cursor < 17; i++) {
@@ -96,6 +96,20 @@ function aufdecken(stapel) {
     let p = document.getElementById('frage');
     p.textContent = aktuelle_frage.frage;
 
+
+
+
+     // Antworten mischen
+    const richtig = aktuelle_frage.antworten[aktuelle_frage.richtig];
+    const gemischt = mischen(aktuelle_frage.antworten);
+        // Richtige Antwort finden
+    aktuelle_frage.richtig = Object.keys(gemischt).find(key => gemischt[key] === richtig);
+    aktuelle_frage.antworten = gemischt;
+    // alert(aktuelle_frage.richtig);
+
+
+
+
     // Antworten anzeigen
     let a = document.getElementById('a');
     a.textContent = buchstaben[0] + ': ' + aktuelle_frage.antworten[0];
@@ -113,7 +127,7 @@ function aufdecken(stapel) {
 
 function beantworten(antwort) {
     // Bei richtiger Antwort:
-    if (antwort === aktuelle_frage.richtig) {
+    if (antwort == aktuelle_frage.richtig) {
         document.getElementById('rightwrong').innerHTML = "Right answer!";
         right = ++right;
     }
@@ -139,7 +153,6 @@ async function start(file) {
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
         stapel.push(value);
-        
     }
     // Kategorien initialisieren (linke goals-leiste)
     for (let i = 0; i < stapel.length; i++) {
