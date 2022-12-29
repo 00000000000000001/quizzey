@@ -251,5 +251,203 @@
         ],
         "richtig": 3,
         "kategorie": 3
+    },
+    "24":{
+        "frage": "In 2020, ___ of the global population had access to clean cooking fuels and technologies",
+        "antworten": [
+            "69%",
+            "75%",
+            "55%",
+            "90%"
+        ],
+        "richtig": 0,
+        "kategorie": 6
+    },
+    "25":{
+        "frage": "How many people had no access to energy in the year 2020?",
+        "antworten": [
+            "733 million",
+            "355 million",
+            "244 million",
+            "611 million"
+        ],
+        "richtig": 0,
+        "kategorie": 6
+    },
+    "26":{
+        "frage": "Ensure access to _____, _____, sustainable and modern energy for all",
+        "antworten": [
+            "affordable, reliable",
+            "cheap, quick",
+            "transportable, reliable",
+            "transferable, affordable"
+        ],
+        "richtig": 0,
+        "kategorie": 6
+    },
+    "27":{
+        "frage": "How many children are engaged in child labour worldwide?",
+        "antworten": [
+            "Every 1 in 10 (160 Million)",
+            "Every 1 in 7 (230 Million)",
+            "Every 1 in 16 (100 Million)",
+            "Every 1 in 20 (80 Million)"
+        ],
+        "richtig": 0,
+        "kategorie": 7
+    },
+    "28":{
+        "frage": "What is the UN definition of sustainable tourism?",
+        "antworten": [
+            "Tourism creates jobs and promotes local culture and products",
+            "Tourists don't leave behind any waste and consume sustainable products only",
+            "Tourism is only sustainable up to a certain ratio of 10 locals per tourist",
+            "The tourism direct GDP may not take up more than 40% of the country's total GDP"
+        ],
+        "richtig": 0,
+        "kategorie": 7
+    },
+    "29":{
+        "frage": "How does the UN try to achieve higher levels of economic productivity, with a focus on high-value added and labour-intensive sectors?",
+        "antworten": [
+            "Diversification, technological upgrading and innovation",
+            "More employees, less working hours and better salaries",
+            "Outsourcing, labour surcharges and coffee breaks",
+            "Globalized cooperation, robot assistance and market centralization"
+        ],
+        "richtig": 0,
+        "kategorie": 7
+    },
+    "30":{
+        "frage": "How many small-scale industries have access to financial support for recovery (~333 Million Industries)?",
+        "antworten": [
+            "Every 1 in 3 (111 Million)",
+            "Every 1 in 2 (166 Million)",
+            "Every industry has access",
+            "Every 1 in 5 (66,6 Million)"
+        ],
+        "richtig": 0,
+        "kategorie": 8
+    },
+    "31":{
+        "frage": "Which technology sector is more resilient to a crisis-related production shortage? (Which tech sector has the least recession during a crisis?)",
+        "antworten": [
+            "High Technology (e.g. Computer, Cars, Nuclear Powerplants)",
+            "Deep Technology (Cutting edge start-up technology)",
+            "Medium Technology (Electronically assisted, but not humanly independant technology)",
+            "Low Technology (e.g. Fully mechanical working tools)"
+        ],
+        "richtig": 0,
+        "kategorie": 8
+    },
+    "32":{
+        "frage": "By 2020, the United Nations wanted to improve access to what kind of technology for the least developed countries?",
+        "antworten": [
+            "Communication technology and universal access to the internet",
+            "Smartphones and Notebooks",
+            "Nuclear power plants and public transport",
+            "Genetically modified seeds and fertilizers"
+        ],
+        "richtig": 0,
+        "kategorie": 8
+    },
+    "33":{
+        "frage": "With what purpose in mind was European unification launched in 1957?",
+        "antworten": [
+            "as an economic community",
+            "as a defence community",
+            "as a political community",
+            ""
+        ],
+        "richtig": 0,
+        "kategorie": 8
+    },
+    "34":{
+        "frage": "During the financial crisis, youth unemployment in Greece rose at times to over",
+        "antworten": [
+            "30%",
+            "40%",
+            "50%",
+            ""
+        ],
+        "richtig": 2,
+        "kategorie": 8
+    },
+    "35":{
+        "frage": "In more and more areas, machines and robots are taking over the work. Which measure would be the least suitable to cushion this transformation process fuelled by digitalisation and artificial intelligence (AI)?",
+        "antworten": [
+            "an unconditional basic income",
+            "a significant increase in weekly working hours",
+            "School education tailored to creativity and social skills",
+            ""
+        ],
+        "richtig": 1,
+        "kategorie": 8
+    },
+    "36":{
+        "frage": "Which of these statements is NOT true?",
+        "antworten": [
+            "China wants to divert rivers",
+            "Turkish President Recep Tayyip Erdogan is planning a canal from the Black Sea to the Sea of Marmara.",
+            "Mountain tops are being blown away in the USA to enable rare earths to be mined",
+            ""
+        ],
+        "richtig": 2,
+        "kategorie": 9
+    },
+    "37":{
+        "frage": "By which statement did a study in 2011 cause a sensation throughout Europe?",
+        "antworten": [
+            "Nuclear power plants are not insurable.",
+            "Old nuclear power plants cannot withstand a terrorist attack.",
+            "Nuclear power plants are still indispensable for the security of energy supply in Europe in the distant future.",
+            ""
+        ],
+        "richtig": 0,
+        "kategorie": 9
+    },
+    "38":{
+        "frage": "Stuttgart (Germany) invested just 5 euros per capita in safe cycling in 2018. How much money does the Dutch city of Utrecht spend on this?",
+        "antworten": [
+            "81 euros",
+            "132 euros",
+            "196 euros",
+            ""
+        ],
+        "richtig": 1,
+        "kategorie": 9
+    },
+    "39":{
+        "frage": "Which reason for flight does the Geneva Convention NOT acknowledge?",
+        "antworten": [
+            "Climate change and natural disasters",
+            "Political persecution",
+            "Discrimination due to race, religion or sexuality",
+            ""
+        ],
+        "richtig": 0,
+        "kategorie": 10
+    },
+    "40":{
+        "frage": "In 2011 the group \"Occupy Wall Street\" was formed in New York City?",
+        "antworten": [
+            "more social justice",
+            "Expropriation of the rich",
+            "Work for all",
+            ""
+        ],
+        "richtig": 0,
+        "kategorie": 10
+    },
+    "41":{
+        "frage": "What does the international development aid organization \"Oxfam\" promote in a satirical commercial?",
+        "antworten": [
+            "for an EU-wide financial transaction tax",
+            "for an end to economic growth",
+            "for a stop to all development aid payments",
+            ""
+        ],
+        "richtig": 0,
+        "kategorie": 10
     }
 }

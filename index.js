@@ -38,10 +38,11 @@ function update_nav(){
         let kat = document.getElementById(i);
         let num = kat.getElementsByClassName('number')[0];
         if (beantwortet[i] === kategorien[i]){
-            num.innerHTML = '&#10003;';
-            changeColor(colors[++cursor]);
+            // num.innerHTML = '&#10003;';
+            document.getElementById(++cursor).style.visibility = 'visible';
+            changeColor(colors[cursor]);
         }else{
-            num.innerHTML = beantwortet[i] + '/' + kategorien[i];
+            // num.innerHTML = beantwortet[i] + '/' + kategorien[i];
         }
         
     }
@@ -72,7 +73,7 @@ function sortieren(stapel) {
 function aufdecken(stapel) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
-
+        changeColor('#f8fff2');
         let karte = document.getElementById('Karte');
         if (right == 7) {
             karte.textContent = "Right answers: " + right + " You are a sustainable homie";
@@ -142,10 +143,24 @@ async function start(file) {
         kategorien[stapel[i].kategorie-1]++;
     }
     update_nav();
+    changeColor(colors[0]);
+    document.getElementById('Frage').style.color = 'white';
+    document.getElementById('a').style.color = 'white';
+    document.getElementById('b').style.color = 'white';
+    document.getElementById('c').style.color = 'white';
+    document.getElementById('d').style.color = 'white';
+    document.getElementById('rightwrong').style.color = 'white';
+    // erstes SDG einblenden
+    document.getElementById('0').style.visibility = 'visible';
+
+
+    
+
 
     // SpielAblauf
     // 1. Kartenstapel sortieren
     sortieren(stapel);
+    console.log(stapel);
     // 2. Nächste Frage stellen
     aufdecken(stapel);
 }

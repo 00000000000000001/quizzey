@@ -16,44 +16,48 @@
 			/* border: dotted thin black; */
 		}
 
-		body{
-            -webkit-transition: background-color 1s ease-out;
-            /* -moz-transition: background-color 1s ease-out;
+		body {
+			-webkit-transition: background-color 1s ease-out;
+			/* -moz-transition: background-color 1s ease-out;
             -o-transition: background-color 1s ease-out;
             transition: background-color 1s ease-out; */
 			text-align: center;
 			background-color: #f8fff2;
-        }
+		}
 
 
 		#mainpage {
 			display: grid;
-			grid-template-columns: 10em repeat(11, 1fr);
-			grid-template-rows: 5em repeat(10, 1fr) 5em;
+			grid-template-columns: 10% repeat(10, 1fr) 10%;
+			grid-template-rows: 5em, repeat(3, 1fr);
 		}
 
-		#logo {
+		/* #logo {
 			grid-column: 10em;
 			grid-row: 1/2;
 			background-color: #f3f3f3;
-		}
+		} */
 
 		#logo img {
 			height: 100%;
 		}
 
-		header {
-			grid-column: 2/13;
-			grid-row: 5em/1;
+		header { /*ist eig nav*/
+			grid-column: 2/12;
+			grid-row: 0/1;
 		}
 
 		nav {
-			grid-column: 10em;
-			grid-row: 2/13;
+			/* background-color: #00548c; */
+			grid-column: 1/13;
+			grid-row: 1/2;
+			display: flex;
+			/* justify-content: flex-start;
+			flex-wrap: wrap; */
 		}
 
 		#Karte {
-			grid-column: 2/13;
+			grid-column: 2/12;
 			grid-row: 2/13;
 			color: #007ba8;
 			font-weight: bold;
@@ -116,16 +120,32 @@
 			justify-content: space-around;
 			align-items: center;
 			color: #ffffff;
-			padding-right: 0.5em;
+			transition: visibility 0.3s linear, opacity 0.3s linear;
+			/* padding: 0.5em; */
 		}
 
 		.category img {
-			width: 3em;
+			width: 5em;
 		}
 
 		.number {
 			text-align: right;
 			width: 100%;
+		}
+
+		@media (max-width: 700px) {
+			#Karte {
+				grid-column: 1/13;
+				grid-row: 2/13;
+			}
+
+			nav {
+				grid-column: 1/13;
+				grid-row: 1/2;
+				display: flex;
+				justify-content: flex-start;
+				flex-wrap: wrap;
+			}
 		}
 	</style>
 	<script defer src="index.js"></script>
@@ -133,110 +153,108 @@
 
 <body>
 	<div id="mainpage">
-		<div id="logo">
-			<img src="./resources/sdg_logo.svg">
-		</div>
+
 		<header>
-			<h1>Learn more about the SDGs - Take the SDG Quiz</h1>
+			<!-- <h1>Learn more about the SDGs - Take the SDG Quiz</h1> -->
 		</header>
 		<nav>
-			<div class="category" style="background-color: #ec1629" id="0">
+			<div class="category" style="background-color: #ec1629; visibility: hidden;" id="0">
 				<img src="./resources/sdg_1.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #d4a124" id="1">
+			<div class="category" style="background-color: #d4a124; visibility: hidden;" id="1">
 				<img src="./resources/sdg_2.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #229c46" id="2">
+			<div class="category" style="background-color: #229c46; visibility: hidden;" id="2">
 				<img src="./resources/sdg_3.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #c41930" id="3">
+			<div class="category" style="background-color: #c41930; visibility: hidden;" id="3">
 				<img src="./resources/sdg_4.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #f03e27" id="4">
+			<div class="category" style="background-color: #f03e27; visibility: hidden;" id="4">
 				<img src="./resources/sdg_5.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #00b0da" id="5">
+			<div class="category" style="background-color: #00b0da; visibility: hidden;" id="5">
 				<img src="./resources/sdg_6.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #fdb80b" id="6">
+			<div class="category" style="background-color: #fdb80b; visibility: hidden;" id="6">
 				<img src="./resources/sdg_7.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #901135" id="7">
+			<div class="category" style="background-color: #901135; visibility: hidden;" id="7">
 				<img src="./resources/sdg_8.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #f36d20" id="8">
+			<div class="category" style="background-color: #f36d20; visibility: hidden;" id="8">
 				<img src="./resources/sdg_9.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #e20c85" id="9">
+			<div class="category" style="background-color: #e20c85; visibility: hidden;" id="9">
 				<img src="./resources/sdg_10.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #f99e21" id="10">
+			<div class="category" style="background-color: #f99e21; visibility: hidden;" id="10">
 				<img src="./resources/sdg_11.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #d08e25" id="11">
+			<div class="category" style="background-color: #d08e25; visibility: hidden;" id="11">
 				<img src="./resources/sdg_12.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #46783c" id="12">
+			<div class="category" style="background-color: #46783c; visibility: hidden;" id="12">
 				<img src="./resources/sdg_13.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #007ebd" id="13">
+			<div class="category" style="background-color: #007ebd; visibility: hidden;" id="13">
 				<img src="./resources/sdg_14.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #3bb247" id="14">
+			<div class="category" style="background-color: #3bb247; visibility: hidden;" id="14">
 				<img src="./resources/sdg_15.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #00548c" id="15">
+			<div class="category" style="background-color: #00548c; visibility: hidden;" id="15">
 				<img src="./resources/sdg_16.svg">
 				<div class="number">
 
 				</div>
 			</div>
-			<div class="category" style="background-color: #113368" id="16">
+			<div class="category" style="background-color: #113368; visibility: hidden;" id="16">
 				<img src="./resources/sdg_17.svg">
 				<div class="number">
 
