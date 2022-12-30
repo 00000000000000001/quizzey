@@ -33,6 +33,15 @@ function mischen(arr) {
     return arr;
 }
 
+function mixAnswers(card){
+    // Antworten mischen
+    const richtig = card.antworten[card.richtig];
+    const gemischt = mischen(card.antworten);
+        // Richtige Antwort finden
+    card.richtig = Object.keys(gemischt).find(key => gemischt[key] === richtig);
+    card.antworten = gemischt;
+}
+
 function update_nav(){
     for (let i = cursor; i < cursor + 1 && cursor < 17; i++) {
         let kat = document.getElementById(i);
@@ -96,19 +105,7 @@ function aufdecken(stapel) {
     let p = document.getElementById('frage');
     p.textContent = aktuelle_frage.frage;
 
-
-
-
-     // Antworten mischen
-    const richtig = aktuelle_frage.antworten[aktuelle_frage.richtig];
-    const gemischt = mischen(aktuelle_frage.antworten);
-        // Richtige Antwort finden
-    aktuelle_frage.richtig = Object.keys(gemischt).find(key => gemischt[key] === richtig);
-    aktuelle_frage.antworten = gemischt;
-    // alert(aktuelle_frage.richtig);
-
-
-
+     mixAnswers(aktuelle_frage);
 
     // Antworten anzeigen
     let a = document.getElementById('a');
@@ -122,7 +119,6 @@ function aufdecken(stapel) {
 
     let d = document.getElementById('d');
     d.textContent = buchstaben[3] + ': ' + aktuelle_frage.antworten[3];
-
 }
 
 function beantworten(antwort) {
