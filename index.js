@@ -6,6 +6,8 @@ function Karte(frage, antworten, richtige_antwort) {
 
 let stapel = [];
 
+let numberOfQuestions = 0;
+
 let aktuelle_frage = {};
 
 let right = 0;
@@ -13,9 +15,8 @@ let wrong = 0;
 
 const buchstaben = ['A', 'B', 'C', 'D'];
 
-let kategorien = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-let beantwortet = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-
+let kategorien = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let beantwortet = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let cursor = 0;
 
 // die Farben der einzelnen SDG's
@@ -33,35 +34,30 @@ function mischen(arr) {
     return arr;
 }
 
-function mixAnswers(card){
+function mixAnswers(card) {
     // Antworten mischen
     const richtig = card.antworten[card.richtig];
     const gemischt = mischen(card.antworten);
-        // Richtige Antwort finden
+    // Richtige Antwort finden
     card.richtig = Object.keys(gemischt).find(key => gemischt[key] === richtig);
     card.antworten = gemischt;
 }
 
-function update_nav(){
-    for (let i = cursor; i < cursor + 1 && cursor < 17; i++) {
-        let kat = document.getElementById(i);
-        let num = kat.getElementsByClassName('number')[0];
-        if (beantwortet[i] === kategorien[i]){
-            // num.innerHTML = '&#10003;';
-            document.getElementById(++cursor).style.visibility = 'visible';
-            changeColor(colors[cursor]);
-        }else{
-            // num.innerHTML = beantwortet[i] + '/' + kategorien[i];
-        }
-        
+// soll bei Abschluss einer Kategorie die nächste Kategorie anzeigen
+function update_nav() {
+    while (kategorien[cursor] === beantwortet[cursor] && cursor < 16){
+        document.getElementById(cursor).style.visibility = 'visible';
+        cursor++;
     }
+    document.getElementById(cursor).style.visibility = 'visible';
+    changeColor(colors[cursor]);
 }
 
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
-function max_cat(stapel, l){
+function max_cat(stapel, l) {
     let max = l;
     for (let i = l; i < stapel.length; i++) {
-        if (stapel[i].kategorie > stapel[max].kategorie){
+        if (stapel[i].kategorie > stapel[max].kategorie) {
             max = i;
         }
     }
@@ -79,23 +75,30 @@ function sortieren(stapel) {
     return stapel;
 }
 
+function gameover() {
+    document.getElementById('karte').innerHTML = "";
+    changeColor('#f8fff2');
+
+    const percent = Math.round((numberOfQuestions / 100) * right);
+    const auswertung = document.createElement('p');
+    auswertung.textContent = `You answered ${percent}% correctly (questions: ${numberOfQuestions}, right: ${right}, wrong: ${wrong}).`;
+
+    if (percent >= 80) {
+        auswertung.textContent += "You are a sustainable homie!";
+    } else {
+        auswertung.textContent += "You need min. 80% of the questions right to succeed. Try againg!";
+    }
+
+    document.getElementById('karte').appendChild(auswertung);
+
+    aktuelle_frage = {};
+
+}
+
 function aufdecken(stapel) {
     // Wenn keine Fragen übrig sind, dann ist das Game over
     if (stapel.length === 0) {
-        changeColor('#f8fff2');
-        
-        const auswertung = document.createElement('p');
-        if (right == 7) {
-            auswertung.textContent = "Right answers: " + right + " You are a sustainable homie";
-        } else if (wrong == 7) {
-            auswertung.textContent = "All your answers were wrong! You should read and learn more about the SDGs! ";
-        } else {
-            auswertung.textContent = "Right answers: " + right + "  Wrong Answers: " + wrong;
-        }
-       document.getElementById('karte').innerHTML = "";
-       document.getElementById('karte').appendChild(auswertung);
-
-        aktuelle_frage = {};
+        gameover();
         return;
     }
 
@@ -105,7 +108,7 @@ function aufdecken(stapel) {
     let p = document.getElementById('frage');
     p.textContent = aktuelle_frage.frage;
 
-     mixAnswers(aktuelle_frage);
+    mixAnswers(aktuelle_frage);
 
     // Antworten anzeigen
     let a = document.getElementById('a');
@@ -125,15 +128,15 @@ function beantworten(antwort) {
     // Bei richtiger Antwort:
     if (antwort == aktuelle_frage.richtig) {
         document.getElementById('rightwrong').innerHTML = "Right answer!";
-        right = ++right;
+        ++right;
     }
     // Bei falscher Antwort:
     else {
         const richtig = aktuelle_frage.richtig;
         document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
-        wrong = ++wrong;
+        ++wrong;
     }
-    beantwortet[aktuelle_frage.kategorie-1]++;
+    beantwortet[aktuelle_frage.kategorie - 1]++;
     update_nav();
     aufdecken(stapel);
 }
@@ -149,12 +152,15 @@ async function start(file) {
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
         stapel.push(value);
+        numberOfQuestions++;
     }
     // Kategorien initialisieren (linke goals-leiste)
     for (let i = 0; i < stapel.length; i++) {
-        kategorien[stapel[i].kategorie-1]++;
+        kategorien[stapel[i].kategorie - 1]++;
     }
+
     update_nav();
+
     changeColor(colors[0]);
     document.getElementById('frage').style.color = 'white';
     document.getElementById('a').style.color = 'white';
@@ -162,12 +168,6 @@ async function start(file) {
     document.getElementById('c').style.color = 'white';
     document.getElementById('d').style.color = 'white';
     document.getElementById('rightwrong').style.color = 'white';
-    // erstes SDG einblenden
-    document.getElementById('0').style.visibility = 'visible';
-
-
-    
-
 
     // SpielAblauf
     // 1. Kartenstapel sortieren
