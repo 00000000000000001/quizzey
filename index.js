@@ -44,14 +44,14 @@ function mixAnswers(card) {
 }
 
 // soll bei Abschluss einer Kategorie die nächste Kategorie anzeigen
-function update_nav() {
-    while (kategorien[cursor] === beantwortet[cursor] && cursor < 16){
-        document.getElementById(cursor).style.visibility = 'visible';
-        cursor++;
-    }
-    document.getElementById(cursor).style.visibility = 'visible';
-    changeColor(colors[cursor]);
-}
+// function update_nav() {
+//     while (kategorien[cursor] === beantwortet[cursor] && cursor < 16){
+//         document.getElementById(cursor).style.visibility = 'visible';
+//         cursor++;
+//     }
+//     document.getElementById(cursor).style.visibility = 'visible';
+//     changeColor(colors[cursor]);
+// }
 
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
 function max_cat(stapel, l) {
@@ -93,6 +93,18 @@ function gameover() {
 
     aktuelle_frage = {};
 
+    showAllSDG();
+
+}
+
+function showQuestion(detailed = false){
+    // Frage anzeigen
+    let p = document.getElementById('frage');
+    if(detailed){
+        p.textContent = aktuelle_frage.kategorie + ': ' + aktuelle_frage.frage;
+    } else {
+        p.textContent = aktuelle_frage.frage;
+    }
 }
 
 function aufdecken(stapel) {
@@ -104,9 +116,7 @@ function aufdecken(stapel) {
 
     aktuelle_frage = stapel.pop();
 
-    // Frage anzeigen
-    let p = document.getElementById('frage');
-    p.textContent = aktuelle_frage.frage;
+    showQuestion(true);
 
     mixAnswers(aktuelle_frage);
 
@@ -124,6 +134,30 @@ function aufdecken(stapel) {
     d.textContent = buchstaben[3] + ': ' + aktuelle_frage.antworten[3];
 }
 
+function showNextSDG(){
+    console.log('cursor: ' + cursor);
+    document.getElementById(cursor).style.visibility = 'visible';
+    changeColor(colors[cursor]);
+    if (cursor > 0){
+        document.getElementById(cursor - 1).style.visibility = 'hidden';
+    }
+}
+
+function updateSDG(){
+    
+    // Wenn eine Kategorie beendet wurde
+    if (kategorien[cursor] === beantwortet[cursor]){
+        ++cursor;
+        showNextSDG();
+    }
+}
+
+function showAllSDG(){
+    for(i=0; i < 17; ++i){
+        document.getElementById(i).style.visibility = 'visible';
+    }
+}
+
 function beantworten(antwort) {
     // Bei richtiger Antwort:
     if (antwort == aktuelle_frage.richtig) {
@@ -137,8 +171,15 @@ function beantworten(antwort) {
         ++wrong;
     }
     beantwortet[aktuelle_frage.kategorie - 1]++;
-    update_nav();
+    updateSDG();
+    // console.log('cursor: ' + cursor);
+    console.log('answered: '+ beantwortet);
     aufdecken(stapel);
+    // update_nav();
+
+    console.log('categories' + kategorien);
+    
+    
 }
 
 function fetch_json(filename) {
@@ -147,7 +188,8 @@ function fetch_json(filename) {
     });
 }
 
-async function start(file) {
+
+async function loadQuestions(file){
     // Fragen sammeln
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
@@ -158,9 +200,7 @@ async function start(file) {
     for (let i = 0; i < stapel.length; i++) {
         kategorien[stapel[i].kategorie - 1]++;
     }
-
-    update_nav();
-
+    showNextSDG();
     changeColor(colors[0]);
     document.getElementById('frage').style.color = 'white';
     document.getElementById('a').style.color = 'white';
@@ -168,13 +208,17 @@ async function start(file) {
     document.getElementById('c').style.color = 'white';
     document.getElementById('d').style.color = 'white';
     document.getElementById('rightwrong').style.color = 'white';
-
-    // SpielAblauf
-    // 1. Kartenstapel sortieren
-    sortieren(stapel);
-    console.log(stapel);
-    // 2. Nächste Frage stellen
-    aufdecken(stapel);
 }
 
-start('fragen.json');
+async function start(file) {
+    loadQuestions('fragen.json').then(_=> {
+        // SpielAblauf
+        // 1. Kartenstapel sortieren
+        sortieren(stapel);
+        // 2. Nächste Frage stellen
+        aufdecken(stapel);
+    });         
+    
+}
+
+start();
