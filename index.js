@@ -1,3 +1,83 @@
+// certificate download
+
+window.jsPDF = window.jspdf.jsPDF
+
+function showDownloadForm(){
+    let labelFN = document.createElement('label');
+    let labelLN = document.createElement('label');
+    let textFN = document.createElement('input');
+    let textLN = document.createElement('input');
+    let button = document.createElement('button');
+    let info = document.createElement('div');
+    const form = document.createElement('p');
+
+    labelFN.textContent = 'Firstname:';
+    labelLN.textContent = 'Lastname:';
+    textFN.type = 'text';
+    textLN.type = 'text';
+    button.textContent = 'download certificate'
+
+    textFN.id = 'firstname';
+    textLN.id = 'lastname';
+    button.id = 'download';
+    info.id = 'info';
+
+    form.style = "display: flex; flex-direction: column; width: 20vw;";
+
+    button.addEventListener("click", download);
+
+    form.appendChild(labelFN);
+    form.appendChild(textFN);
+    form.appendChild(labelLN);
+    form.appendChild(textLN);
+    form.appendChild(button);
+    form.appendChild(info);
+    
+    document.getElementById('karte').appendChild(form);
+    
+}
+
+function download(){
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('lastname');
+
+    if( /\w+/gm.test(firstname.value) && /\w+/gm.test(lastname.value)){
+        const name = firstname.value + " " + lastname.value;
+        generatePDF(name);
+    }else{
+        const info = document.getElementById('info');
+        info.innerHTML = '';
+        info.innerHTML = 'Please enter your first and last name to succeed'
+    }
+    
+    
+}
+
+function generatePDF(name){
+    var doc = new jsPDF();
+    var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+    
+    // Logo
+    var img = new Image()
+    img.src = './canvas.png'
+    doc.addImage(img, 'png', 0, 0, 210, 297)
+
+    
+    // Name der Zertifizierten Person
+    doc.setFontSize(42).setFont(undefined, 'bold');
+    doc.text(name, pageWidth / 2, 162, {align: 'center'});
+    
+    // Datum
+    const date = new Date().toLocaleDateString()
+    doc.setFontSize(16).setFont(undefined, 'normal');
+    doc.text(date.toString(), 70, 227.4);
+    
+    doc.save("sdg_certificate.pdf");
+}
+
+// QUIZ
+
 function Karte(frage, antworten, richtige_antwort) {
     this.frage = frage;
     this.antworten = antworten;
@@ -75,7 +155,8 @@ function gameover() {
     auswertung.textContent = `You answered ${percent}% correctly (questions: ${numberOfQuestions}, right: ${right}, wrong: ${wrong}).`;
 
     if (percent >= 80) {
-        auswertung.textContent += "You are a sustainable homie!";
+        auswertung.textContent += "You are a sustainable homie! Download the certificate.";
+        showDownloadForm();
     } else {
         auswertung.textContent += "You need min. 80% of the questions right to succeed. Try againg!";
     }
@@ -123,6 +204,9 @@ function aufdecken(stapel) {
 
     let d = document.getElementById('d');
     d.textContent = buchstaben[3] + ': ' + aktuelle_frage.antworten[3];
+
+    // muss wieder ausgeblendet werden
+    console.log('richtig: ' + buchstaben[aktuelle_frage.richtig]);
 }
 
 function showNextSDG() {
