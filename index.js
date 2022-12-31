@@ -43,16 +43,6 @@ function mixAnswers(card) {
     card.antworten = gemischt;
 }
 
-// soll bei Abschluss einer Kategorie die nächste Kategorie anzeigen
-// function update_nav() {
-//     while (kategorien[cursor] === beantwortet[cursor] && cursor < 16){
-//         document.getElementById(cursor).style.visibility = 'visible';
-//         cursor++;
-//     }
-//     document.getElementById(cursor).style.visibility = 'visible';
-//     changeColor(colors[cursor]);
-// }
-
 // sucht nach der Frage mit der niedrigsten Kategorie ab Stelle l
 function max_cat(stapel, l) {
     let max = l;
