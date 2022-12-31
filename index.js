@@ -88,7 +88,7 @@ function gameover() {
 
 }
 
-function showQuestion(detailed = false) {
+function showQuestion(detailed) {
     // Frage anzeigen
     let p = document.getElementById('frage');
     if (detailed) {
@@ -107,7 +107,7 @@ function aufdecken(stapel) {
 
     aktuelle_frage = stapel.pop();
 
-    showQuestion(true);
+    showQuestion(false);
 
     mixAnswers(aktuelle_frage);
 

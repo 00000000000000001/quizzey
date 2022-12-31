@@ -17,17 +17,21 @@
 			font-family: "Roadgeek 2005 Series B";
 			box-sizing: border-box;
 		}
-
+		html{
+			/* height: 100%; */
+		}
 		body {
             transition: background-color 1s ease-out;
 			text-align: center;
 			background-color: #f8fff2;
+			/* height: 100%; */
 		}
 
 		#mainpage {
 			display: grid;
 			grid-template-columns: repeat(1, 1fr);
 			grid-template-rows: repeat(1, 1fr);
+			/* height: 50%; */
 		}
 
 		header{
@@ -38,6 +42,7 @@
 			flex-wrap: wrap;
 			/* max-height: 10em; */
 			/* box-sizing: border-box; */
+			/* grid-row: 1/2; */
 		}
 
 		.sdg{
@@ -57,6 +62,7 @@
 		}
 
 		#karte {
+			
 			/* background-color: aqua; */
 			font-weight: bold;
 			font-size: 25px;
@@ -64,23 +70,49 @@
 			width: 100%;
 			/* height: 50vh; */
 			/* top: 25vh; */
-			/* left: 50% - 40vw; */	
+			/* left: 50% - 40vw; */
+			/* margin-top: 7vh;	 */
+			/* grid-row: 2/3; */
 		}
 
 		#frage {
 			font-size: 30px;
 		}
 
+		#Antworten{
+			/* background-color: blueviolet; */
+			/* display: grid; */
+			/* gap: 1rem; */
+		}
+/* 
+		#a{
+			grid-row: 1/2;
+		}
+
+		#b{
+			grid-row: 2/3;
+		}
+
+		#c{
+			grid-row:  3/4;
+		}
+
+		#d{
+			grid-row: 4/5;
+		} */
 		#a,
 		#b,
 		#c,
 		#d {
-			margin: 25px;
-			min-height: 40px;
+			/* margin: 25px; */
+			/* min-height: 10vh; */
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			transition: font-size 0.1s ease;
+			transition: all 0.1s ease;
+			/* line-height: 30px;  */
+			height: 70px;
+			font-size: 20px;
 		}
 
 		#a:hover {
@@ -100,7 +132,8 @@
 		}
 
 		#rightwrong {
-
+			/* background-color: blanchedalmond; */
+			/* grid-row: 3/4; */
 		}
 
 	</style>
@@ -132,16 +165,17 @@
 
 		<article>
 			<div id="karte">
-				<p id="frage"></p>
+				<h1 id="frage"></h1>
 				<div id="Antworten">
 					<div id="a" onclick="beantworten(0)"></div>
 					<div id="b" onclick="beantworten(1)"></div>
 					<div id="c" onclick="beantworten(2)"></div>
 					<div id="d" onclick="beantworten(3)"></div>
-					<div id="rightwrong"> </div>
 				</div>
+				<div id="rightwrong"></div>
 				<div id="ergebnis"></div>
 			</div>
+			
 		</article>
 
 		
