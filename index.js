@@ -10,12 +10,14 @@ function showDownloadForm(){
     let button = document.createElement('button');
     let info = document.createElement('div');
     let container = document.createElement('div');
+    let title = document.createElement('h1');
 
     labelFN.textContent = 'Firstname:';
     labelLN.textContent = 'Lastname:';
     textFN.type = 'text';
     textLN.type = 'text';
     button.textContent = 'download certificate'
+    title.textContent = 'Congratulation!';
 
     textFN.id = 'firstname';
     textLN.id = 'lastname';
@@ -37,6 +39,7 @@ function showDownloadForm(){
     container.appendChild(button);
     container.appendChild(info);
     
+    document.getElementById('karte').appendChild(title);
     document.getElementById('karte').appendChild(container);
     
 }
@@ -50,7 +53,7 @@ function download(){
     const firstname = document.getElementById('firstname');
     const lastname = document.getElementById('lastname');
 
-    if( /\w+/gm.test(firstname.value) && /\w+/gm.test(lastname.value)){
+    if( /^\w+$/gm.test(firstname.value) && /^\w+$/gm.test(lastname.value)){
         const name = firstname.value + " " + lastname.value;
         generatePDF(name);
         hideDownloadForm();
@@ -277,7 +280,7 @@ function fetch_json(filename) {
     });
 }
 
-let preSTapel = [];
+let preStapel = [];
 
 async function loadQuestions(file) {
     // Fragen sammeln
@@ -285,16 +288,16 @@ async function loadQuestions(file) {
     for (const [key, value] of Object.entries(a)) {
         // console.log(`key: ${key} value: ${value}`);
         let index = key - 1;
-        preSTapel.push(value);
+        preStapel.push(value);
         // console.log('catagory: ' + value.kategorie);
         numberOfQuestions++;
     }
-    // console.log('preSTapel: ' + preSTapel);
+    // console.log('preStapel: ' + preStapel);
 
     // // Genau eine Frage pro Kategorie auf den stapel legen
     // for (i = 0; i < 17; ++i){
     //     // stapel.push(sorted[Math.random() * sorted[i].length]); 
-    //     console.log(`cat: ${i + 1} size: ${preSTapel[i].length} ran: ${Math.random() * preSTapel}`);
+    //     console.log(`cat: ${i + 1} size: ${preStapel[i].length} ran: ${Math.random() * preStapel}`);
     // }
 
     
@@ -331,64 +334,64 @@ function loadCategories(arr){
 
 
 function loadStapel(){
-    sortieren(preSTapel);
-    // console.log('preStapel: ' + preSTapel);
-    loadCategories(preSTapel);
+    sortieren(preStapel);
+    // console.log('preStapel: ' + preStapel);
+    loadCategories(preStapel);
     // console.log('categories: ' + kategorien)
 
     // einsortieren
-    for (i=0; i < preSTapel.length; ++i){
-        switch (preSTapel[i].kategorie){
+    for (i=0; i < preStapel.length; ++i){
+        switch (preStapel[i].kategorie){
             case 1:
-                cat1.push(preSTapel[i]);
+                cat1.push(preStapel[i]);
                 break;
             case 2:
-                cat2.push(preSTapel[i]);
+                cat2.push(preStapel[i]);
                 break;
             case 3:
-                cat3.push(preSTapel[i]);
+                cat3.push(preStapel[i]);
                 break;
             case 4:
-                cat4.push(preSTapel[i]);
+                cat4.push(preStapel[i]);
                 break;
             case 5:
-                cat5.push(preSTapel[i]);
+                cat5.push(preStapel[i]);
                 break;
             case 6:
-                cat6.push(preSTapel[i]);
+                cat6.push(preStapel[i]);
                 break;
             case 7:
-                cat7.push(preSTapel[i]);
+                cat7.push(preStapel[i]);
                 break;
             case 8:
-                cat8.push(preSTapel[i]);
+                cat8.push(preStapel[i]);
                 break;
             case 9:
-                cat9.push(preSTapel[i]);
+                cat9.push(preStapel[i]);
                 break;
             case 10:
-                cat10.push(preSTapel[i]);
+                cat10.push(preStapel[i]);
                 break;
             case 11:
-                cat11.push(preSTapel[i]);
+                cat11.push(preStapel[i]);
                 break;
             case 12:
-                cat12.push(preSTapel[i]);
+                cat12.push(preStapel[i]);
                 break;
             case 13:
-                cat13.push(preSTapel[i]);
+                cat13.push(preStapel[i]);
                 break;
             case 14:
-                cat14.push(preSTapel[i]);
+                cat14.push(preStapel[i]);
                 break;
             case 15:
-                cat15.push(preSTapel[i]);
+                cat15.push(preStapel[i]);
                 break;
             case 16:
-                cat16.push(preSTapel[i]);
+                cat16.push(preStapel[i]);
                 break;
             case 17:
-                cat17.push(preSTapel[i]);
+                cat17.push(preStapel[i]);
                 break;
             default:
         }
@@ -435,12 +438,9 @@ function loadStapel(){
 
 function start(file) {
     loadQuestions('fragen.json').then(_ => {
-        // SpielAblauf
-        // 1. Kartenstapel sortieren
-        
-        // 2. Eine Frage aus jeder Kategorie auswählen
+        // 1. Kartenstapel zusammenstellen
         loadStapel();
-        // 3. Nächste Frage stellen
+        // 2. Nächste Frage stellen
         aufdecken(stapel);
     });
 
