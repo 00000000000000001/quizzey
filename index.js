@@ -220,7 +220,7 @@ function aufdecken(stapel) {
 }
 
 function showNextSDG() {
-    console.log('cursor: ' + cursor);
+    // console.log('cursor: ' + cursor);
     document.getElementById(cursor).style.visibility = 'visible';
     document.getElementById(cursor).style.opacity = "1.0";
     changeColor(colors[cursor]);
@@ -262,11 +262,11 @@ function beantworten(antwort) {
     beantwortet[aktuelle_frage.kategorie - 1]++;
     updateSDG();
     // console.log('cursor: ' + cursor);
-    console.log('answered: ' + beantwortet);
+    // console.log('answered: ' + beantwortet);
     aufdecken(stapel);
     // update_nav();
 
-    console.log('categories' + kategorien);
+    // console.log('categories' + kategorien);
 
 
 }
@@ -283,13 +283,13 @@ async function loadQuestions(file) {
     // Fragen sammeln
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
-        console.log(`key: ${key} value: ${value}`);
+        // console.log(`key: ${key} value: ${value}`);
         let index = key - 1;
         preSTapel.push(value);
-        console.log('catagory: ' + value.kategorie);
+        // console.log('catagory: ' + value.kategorie);
         numberOfQuestions++;
     }
-    console.log('preSTapel: ' + preSTapel);
+    // console.log('preSTapel: ' + preSTapel);
 
     // // Genau eine Frage pro Kategorie auf den stapel legen
     // for (i = 0; i < 17; ++i){
@@ -332,9 +332,9 @@ function loadCategories(arr){
 
 function loadStapel(){
     sortieren(preSTapel);
-    console.log('preStapel: ' + preSTapel);
+    // console.log('preStapel: ' + preSTapel);
     loadCategories(preSTapel);
-    console.log('categories: ' + kategorien)
+    // console.log('categories: ' + kategorien)
 
     // einsortieren
     for (i=0; i < preSTapel.length; ++i){
@@ -393,28 +393,9 @@ function loadStapel(){
             default:
         }
 
-
-        console.log('cat1: ' + cat1.length)
-        console.log('cat2: ' + cat2.length)
-        console.log('cat3: ' + cat3.length)
-        console.log('cat4: ' + cat4.length)
-        console.log('cat5: ' + cat5.length)
-        console.log('cat6: ' + cat6.length)
-        console.log('cat7: ' + cat7.length)
-        console.log('cat8: ' + cat8.length)
-        console.log('cat9: ' + cat9.length)
-        console.log('cat10: ' + cat10.length)
-        console.log('cat11: ' + cat11.length)
-        console.log('cat12: ' + cat12.length)
-        console.log('cat13: ' + cat13.length)
-        console.log('cat14: ' + cat14.length)
-        console.log('cat15: ' + cat15.length)
-        console.log('cat16: ' + cat16.length)
-        console.log('cat17: ' + cat17.length)
-
     }
 
-    console.log('stapel: ' + stapel)
+    // console.log('stapel: ' + stapel)
 
     // aus jeder Kategorie eine Frage wäehlen
     stapel.push(cat17[Math.floor(Math.random() * cat17.length)]);
@@ -434,13 +415,13 @@ function loadStapel(){
     stapel.push(cat3[Math.floor(Math.random() * cat3.length)]);
     stapel.push(cat2[Math.floor(Math.random() * cat2.length)]);
     stapel.push(cat1[Math.floor(Math.random() * cat1.length)]);
-    console.log('ran: ' + stapel)
+    // console.log('ran: ' + stapel)
 
     numberOfQuestions = stapel.length;
     
     loadCategories(stapel);
 
-    console.log('cat: ' + kategorien);
+    // console.log('cat: ' + kategorien);
 
     showNextSDG();
     changeColor(colors[0]);
