@@ -63,14 +63,13 @@
 			font-size: 25px;
 			display: flex;
 			flex-direction: column;
-
 			align-items: center;
 
 		}
 
 		#frage {
 			font-size: 30px;
-			min-height: 30vh;
+			min-height: 25vh;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -86,7 +85,7 @@
 		#c,
 		#d {
 			transition: all 0.1s ease;
-			height: 70px;
+			height: 50px;
 			font-size: 20px;
 		}
 
@@ -104,11 +103,6 @@
 
 		#d:hover {
 			font-size: 30px;
-		}
-
-		#rightwrong {
-			/* background-color: blanchedalmond; */
-			/* grid-row: 3/4; */
 		}
 
 	</style>
@@ -140,14 +134,14 @@
 
 		<article id="article">
 			<div id="karte">
-				<h1 id="frage"></h1>
+				<div id="frage"></div>
 				<div id="Antworten">
 					<div id="a" onclick="beantworten(0)"></div>
 					<div id="b" onclick="beantworten(1)"></div>
 					<div id="c" onclick="beantworten(2)"></div>
 					<div id="d" onclick="beantworten(3)"></div>
 				</div>
-				<div id="rightwrong"></div>
+				<!-- <div id="rightwrong"></div> -->
 				<div id="ergebnis"></div>
 			</div>
 			

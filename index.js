@@ -22,7 +22,7 @@ function showDownloadForm(){
     button.id = 'download';
     info.id = 'info';
     container.id = 'container';
-    
+
     // textFN.style.fontFamily = "initial";
     // textLN.style.fontFamily = "initial";
 
@@ -250,13 +250,13 @@ function showAllSDG() {
 function beantworten(antwort) {
     // Bei richtiger Antwort:
     if (antwort == aktuelle_frage.richtig) {
-        document.getElementById('rightwrong').innerHTML = "Right answer!";
+        document.getElementById('ergebnis').innerHTML = "Right answer!";
         ++right;
     }
     // Bei falscher Antwort:
     else {
         const richtig = aktuelle_frage.richtig;
-        document.getElementById('rightwrong').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
+        document.getElementById('ergebnis').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[richtig]} :  "${aktuelle_frage.antworten[richtig]}"`);
         ++wrong;
     }
     beantwortet[aktuelle_frage.kategorie - 1]++;
@@ -449,7 +449,7 @@ function loadStapel(){
     document.getElementById('b').style.color = 'white';
     document.getElementById('c').style.color = 'white';
     document.getElementById('d').style.color = 'white';
-    document.getElementById('rightwrong').style.color = 'white';
+    document.getElementById('ergebnis').style.color = 'white';
 }
 
 function start(file) {
