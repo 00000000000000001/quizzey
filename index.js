@@ -9,7 +9,7 @@ function showDownloadForm(){
     let textLN = document.createElement('input');
     let button = document.createElement('button');
     let info = document.createElement('div');
-    const form = document.createElement('p');
+    let container = document.createElement('div');
 
     labelFN.textContent = 'Firstname:';
     labelLN.textContent = 'Lastname:';
@@ -21,20 +21,29 @@ function showDownloadForm(){
     textLN.id = 'lastname';
     button.id = 'download';
     info.id = 'info';
+    container.id = 'container';
+    
+    // textFN.style.fontFamily = "initial";
+    // textLN.style.fontFamily = "initial";
 
-    form.style = "display: flex; flex-direction: column; width: 20vw;";
+    container.style = "display: flex; flex-direction: column; width: 20vw;";
 
     button.addEventListener("click", download);
 
-    form.appendChild(labelFN);
-    form.appendChild(textFN);
-    form.appendChild(labelLN);
-    form.appendChild(textLN);
-    form.appendChild(button);
-    form.appendChild(info);
+    container.appendChild(labelFN);
+    container.appendChild(textFN);
+    container.appendChild(labelLN);
+    container.appendChild(textLN);
+    container.appendChild(button);
+    container.appendChild(info);
     
-    document.getElementById('karte').appendChild(form);
+    document.getElementById('karte').appendChild(container);
     
+}
+
+function hideDownloadForm() {
+    const container = document.getElementById('container');
+    container.remove();
 }
 
 function download(){
@@ -44,6 +53,7 @@ function download(){
     if( /\w+/gm.test(firstname.value) && /\w+/gm.test(lastname.value)){
         const name = firstname.value + " " + lastname.value;
         generatePDF(name);
+        hideDownloadForm();
     }else{
         const info = document.getElementById('info');
         info.innerHTML = '';
@@ -65,7 +75,7 @@ function generatePDF(name){
 
     
     // Name der Zertifizierten Person
-    doc.setFontSize(42).setFont(undefined, 'bold');
+    doc.setFontSize(42)/*.setFont(undefined, 'bold')*/;
     doc.text(name, pageWidth / 2, 162, {align: 'center'});
     
     // Datum

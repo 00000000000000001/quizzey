@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script defer src="index.js"></script>
+	<style>
+		@import url(//db.onlinewebfonts.com/c/458cf7aea231a973eb1beacfc13bb8b3?family=Roadgeek+2005+Series+B);
+
+		@font-face {
+			font-family: "Roadgeek 2005 Series B";
+			src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot");
+			src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff") format("woff"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.svg#Roadgeek 2005 Series B") format("svg");
+		}
+
+		* {
+			/* border: dotted thin black; */
+			/* transition: all 1s ease; */
+			font-family: "Roadgeek 2005 Series B";
+			box-sizing: border-box;
+		}
+		html{
+			/* height: 100%; */
+		}
+		body {
+            transition: background-color 1s ease-out;
+			text-align: center;
+			background-color: #f8fff2;
+			/* height: 100%; */
+		}
+
+		#mainpage {
+			display: grid;
+			grid-template-columns: repeat(1, 1fr);
+			grid-template-rows: repeat(1, 1fr);
+			/* height: 50%; */
+		}
+
+		header{
+			/* background-color: #00548c; */
+			/* grid-row: 1/2; */
+			/* grid-column: 1/2; */
+			display: flex;
+			flex-wrap: wrap;
+			/* max-height: 10em; */
+			/* box-sizing: border-box; */
+			/* grid-row: 1/2; */
+		}
+
+		.sdg{
+			width: calc(100% / 17);
+			display: flex;
+			transition: opacity 1s ease;
+		}
+
+		article{
+			/* background-color:#229c46; */
+			/* grid-row: 2/3; */
+			/* grid-column: 1/2; */
+			min-height: 100%;
+			display: flex;
+			/* align-items: center; */
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		#karte {
+			
+			/* background-color: aqua; */
+			font-weight: bold;
+			font-size: 25px;
+			/* position: absolute; */
+			/* width: 100%; */
+			/* height: 50vh; */
+			/* top: 25vh; */
+			/* left: 50% - 40vw; */
+			/* margin-top: 7vh;	 */
+			/* grid-row: 2/3; */
+			display: flex;
+			flex-direction: column;
+
+			align-items: center;
+
+		}
+
+		#frage {
+			font-size: 30px;
+		}
+
+		#Antworten{
+			/* background-color: blueviolet; */
+			/* display: grid; */
+			/* gap: 1rem; */
+		}
+/* 
+		#a{
+			grid-row: 1/2;
+		}
+
+		#b{
+			grid-row: 2/3;
+		}
+
+		#c{
+			grid-row:  3/4;
+		}
+
+		#d{
+			grid-row: 4/5;
+		} */
+		#a,
+		#b,
+		#c,
+		#d {
+			/* margin: 25px; */
+			/* min-height: 10vh; */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all 0.1s ease;
+			/* line-height: 30px;  */
+			height: 70px;
+			font-size: 20px;
+		}
+
+		#a:hover {
+			font-size: 30px;
+		}
+
+		#b:hover {
+			font-size: 30px;
+		}
+
+		#c:hover {
+			font-size: 30px;
+		}
+
+		#d:hover {
+			font-size: 30px;
+		}
+
+		#rightwrong {
+			/* background-color: blanchedalmond; */
+			/* grid-row: 3/4; */
+		}
+
+	</style>
+	<title> SDG Prototype </title>
+</head>
+
+<body>
+	<div id="mainpage">
+		<header>
+
+				<img src="./resources/sdg_1.svg" style="opacity: 0.0;" class="sdg" id="0">
+				<img src="./resources/sdg_2.svg" style="opacity: 0.0;" class="sdg" id="1">
+				<img src="./resources/sdg_3.svg" style="opacity: 0.0;" class="sdg" id="2">
+				<img src="./resources/sdg_4.svg" style="opacity: 0.0;" class="sdg" id="3">
+				<img src="./resources/sdg_5.svg" style="opacity: 0.0;" class="sdg" id="4">
+				<img src="./resources/sdg_6.svg" style="opacity: 0.0;" class="sdg" id="5">
+				<img src="./resources/sdg_7.svg" style="opacity: 0.0;" class="sdg" id="6">
+				<img src="./resources/sdg_8.svg" style="opacity: 0.0;" class="sdg" id="7">
+				<img src="./resources/sdg_9.svg" style="opacity: 0.0;" class="sdg" id="8">
+				<img src="./resources/sdg_10.svg" style="opacity: 0.0;" class="sdg" id="9">
+				<img src="./resources/sdg_11.svg" style="opacity: 0.0;" class="sdg" id="10">
+				<img src="./resources/sdg_12.svg" style="opacity: 0.0;" class="sdg" id="11">
+				<img src="./resources/sdg_13.svg" style="opacity: 0.0;" class="sdg" id="12">
+				<img src="./resources/sdg_14.svg" style="opacity: 0.0;" class="sdg" id="13">
+				<img src="./resources/sdg_15.svg" style="opacity: 0.0;" class="sdg" id="14">
+				<img src="./resources/sdg_16.svg" style="opacity: 0.0;" class="sdg" id="15">
+				<img src="./resources/sdg_17.svg" style="opacity: 0.0;" class="sdg" id="16">
+		</header>
+
+		<article id="article">
+			<div id="karte">
+				<h1 id="frage"></h1>
+				<div id="Antworten">
+					<div id="a" onclick="beantworten(0)"></div>
+					<div id="b" onclick="beantworten(1)"></div>
+					<div id="c" onclick="beantworten(2)"></div>
+					<div id="d" onclick="beantworten(3)"></div>
+				</div>
+				<div id="rightwrong"></div>
+				<div id="ergebnis"></div>
+			</div>
+			
+		</article>
+
+		
+
+	</div>
+</body>
