@@ -9,7 +9,7 @@ function generatePDF(name) {
 
     // Logo
     var img = new Image()
-    img.src = './canvas.png'
+    img.src = './resources/canvas.png'
     doc.addImage(img, 'png', 0, 0, 210, 297)
 
 
