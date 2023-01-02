@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script defer src="quiz.js"></script>
-	
+
 	<style>
 		@import url(//db.onlinewebfonts.com/c/458cf7aea231a973eb1beacfc13bb8b3?family=Roadgeek+2005+Series+B);
 
@@ -17,14 +17,15 @@
 		* {
 			/* border: dotted thin black; */
 			/* transition: all 1s ease; */
-			
 			box-sizing: border-box;
 		}
-		html{
+
+		html {
 			/* height: 100%; */
 		}
+
 		body {
-            transition: background-color 1s ease-out;
+			transition: background-color 1s ease-out;
 			text-align: center;
 			background-color: #f8fff2;
 			/* height: 100%; */
@@ -37,19 +38,19 @@
 			/* height: 50%; */
 		}
 
-		header{
+		header {
 			/* background-color: #00548c; */
 			display: flex;
 			flex-wrap: wrap;
 		}
 
-		.sdg{
+		.sdg {
 			width: calc(100% / 17);
 			display: flex;
 			transition: opacity 1s ease;
 		}
 
-		article{
+		article {
 			/* background-color:#229c46; */
 			min-height: 100%;
 			display: flex;
@@ -59,7 +60,6 @@
 		}
 
 		#karte {
-			
 			/* background-color: aqua; */
 			font-weight: bold;
 			font-size: 25px;
@@ -79,11 +79,12 @@
 			border-bottom: solid thin white;
 		}
 
-		#antworten{
+		#antworten {
 			/* background-color: blueviolet; */
 			/* display: grid; */
 			/* gap: 1rem; */
 		}
+
 		#a,
 		#b,
 		#c,
@@ -112,13 +113,12 @@
 			font-size: 100%;
 		}
 
-		#ergebnis{
+		#ergebnis {
 			min-height: 10vh;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 		}
-
 	</style>
 	<title> SDG Prototype </title>
 </head>
@@ -126,25 +126,24 @@
 <body>
 	<div id="mainpage">
 		<header>
-				<img src="./resources/sdg_1.svg" style="opacity: 0.0;" class="sdg" id="0">
-				<img src="./resources/sdg_2.svg" style="opacity: 0.0;" class="sdg" id="1">
-				<img src="./resources/sdg_3.svg" style="opacity: 0.0;" class="sdg" id="2">
-				<img src="./resources/sdg_4.svg" style="opacity: 0.0;" class="sdg" id="3">
-				<img src="./resources/sdg_5.svg" style="opacity: 0.0;" class="sdg" id="4">
-				<img src="./resources/sdg_6.svg" style="opacity: 0.0;" class="sdg" id="5">
-				<img src="./resources/sdg_7.svg" style="opacity: 0.0;" class="sdg" id="6">
-				<img src="./resources/sdg_8.svg" style="opacity: 0.0;" class="sdg" id="7">
-				<img src="./resources/sdg_9.svg" style="opacity: 0.0;" class="sdg" id="8">
-				<img src="./resources/sdg_10.svg" style="opacity: 0.0;" class="sdg" id="9">
-				<img src="./resources/sdg_11.svg" style="opacity: 0.0;" class="sdg" id="10">
-				<img src="./resources/sdg_12.svg" style="opacity: 0.0;" class="sdg" id="11">
-				<img src="./resources/sdg_13.svg" style="opacity: 0.0;" class="sdg" id="12">
-				<img src="./resources/sdg_14.svg" style="opacity: 0.0;" class="sdg" id="13">
-				<img src="./resources/sdg_15.svg" style="opacity: 0.0;" class="sdg" id="14">
-				<img src="./resources/sdg_16.svg" style="opacity: 0.0;" class="sdg" id="15">
-				<img src="./resources/sdg_17.svg" style="opacity: 0.0;" class="sdg" id="16">
+			<img src="./resources/sdg_1.svg" style="opacity: 0.0;" class="sdg" id="0">
+			<img src="./resources/sdg_2.svg" style="opacity: 0.0;" class="sdg" id="1">
+			<img src="./resources/sdg_3.svg" style="opacity: 0.0;" class="sdg" id="2">
+			<img src="./resources/sdg_4.svg" style="opacity: 0.0;" class="sdg" id="3">
+			<img src="./resources/sdg_5.svg" style="opacity: 0.0;" class="sdg" id="4">
+			<img src="./resources/sdg_6.svg" style="opacity: 0.0;" class="sdg" id="5">
+			<img src="./resources/sdg_7.svg" style="opacity: 0.0;" class="sdg" id="6">
+			<img src="./resources/sdg_8.svg" style="opacity: 0.0;" class="sdg" id="7">
+			<img src="./resources/sdg_9.svg" style="opacity: 0.0;" class="sdg" id="8">
+			<img src="./resources/sdg_10.svg" style="opacity: 0.0;" class="sdg" id="9">
+			<img src="./resources/sdg_11.svg" style="opacity: 0.0;" class="sdg" id="10">
+			<img src="./resources/sdg_12.svg" style="opacity: 0.0;" class="sdg" id="11">
+			<img src="./resources/sdg_13.svg" style="opacity: 0.0;" class="sdg" id="12">
+			<img src="./resources/sdg_14.svg" style="opacity: 0.0;" class="sdg" id="13">
+			<img src="./resources/sdg_15.svg" style="opacity: 0.0;" class="sdg" id="14">
+			<img src="./resources/sdg_16.svg" style="opacity: 0.0;" class="sdg" id="15">
+			<img src="./resources/sdg_17.svg" style="opacity: 0.0;" class="sdg" id="16">
 		</header>
-
 		<article id="article">
 			<div id="karte">
 				<div id="frage"></div>
@@ -154,13 +153,8 @@
 					<div id="c" onclick="beantworten(2)"></div>
 					<div id="d" onclick="beantworten(3)"></div>
 				</div>
-				<!-- <div id="rightwrong"></div> -->
 				<div id="ergebnis"></div>
 			</div>
-			
 		</article>
-
-		
-
 	</div>
 </body>

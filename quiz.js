@@ -189,7 +189,7 @@ function showQuestion(detailed) {
 }
 
 function aufdecken(stapel) {
-    // Wenn keine Fragen übrig sind, dann ist das Game over
+    // Wenn keine questions übrig sind, dann ist das Game over
     if (stapel.length === 0) {
         gameover();
         return;
@@ -271,7 +271,7 @@ function fetch_json(filename) {
 
 async function loadQuestions(file) {
     let preStapel = [];
-    // Fragen sammeln
+    // questions sammeln
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
         let index = key - 1;
@@ -280,25 +280,6 @@ async function loadQuestions(file) {
     }
     return preStapel;
 }
-
-let cat1 = [];
-let cat2 = [];
-let cat3 = [];
-let cat4 = [];
-let cat5 = [];
-let cat6 = [];
-let cat7 = [];
-let cat8 = [];
-let cat9 = [];
-let cat10 = [];
-let cat11 = [];
-let cat12 = [];
-let cat13 = [];
-let cat14 = [];
-let cat15 = [];
-let cat16 = [];
-let cat17 = [];
-
 
 function loadCategories(preSt) {
     for (let i = 0; i < 17; ++i) {
@@ -311,7 +292,24 @@ function loadCategories(preSt) {
 }
 
 
-function loadStapel(preStapel) {
+function selectQuestions(preStapel) {
+    let cat1 = [];
+    let cat2 = [];
+    let cat3 = [];
+    let cat4 = [];
+    let cat5 = [];
+    let cat6 = [];
+    let cat7 = [];
+    let cat8 = [];
+    let cat9 = [];
+    let cat10 = [];
+    let cat11 = [];
+    let cat12 = [];
+    let cat13 = [];
+    let cat14 = [];
+    let cat15 = [];
+    let cat16 = [];
+    let cat17 = [];
     sortieren(preStapel);
     loadCategories(preStapel);
 
@@ -408,10 +406,10 @@ function loadStapel(preStapel) {
 }
 
 function start() {
-    // loadQuestions lädt alle Fragen in den preStapel
-    loadQuestions('fragen.json').then(preStapel => {
+    // loadQuestions lädt alle questions in den preStapel
+    loadQuestions('questions.json').then(questions => {
         // 1. Kartenstapel zusammenstellen
-        loadStapel(preStapel);
+        selectQuestions(questions);
         // 2. Nächste Frage stellen
         aufdecken(stapel);
     });
