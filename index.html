@@ -35,14 +35,33 @@
             color: #f8fff2;
             text-decoration: none;
         }
+        #title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #menu{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     </style>
 	<title> SDG Quiz </title>
 </head>
-    <h1> SDG Quiz</h1>
-
+    <div id="title">
+        <h1>THE 17 GOALS QUIZ</h1>
+    </div>
     <ul>
         <li>
-            Read info <a href="https://sdgs.un.org/goals">here</a> and <a href="https://www.undp.org/sustainable-development-goals">here</a>
+            Read info here:
+            <ul>
+                <li>
+                    <a href="https://sdgs.un.org/goals">https://sdgs.un.org/goals</a>
+                </li>
+                <li>
+                     <a href="https://www.undp.org/sustainable-development-goals">https://www.undp.org/sustainable-development-goals</a>
+                </li>
+            </ul>
         </li>
         <li>
             Master at least 80% of the Questions
@@ -51,8 +70,9 @@
             Receive the official ISEDE certificate!
         </li>
     </ul>
-
-    <a href="./quiz.html" id="ref"><div id="start">Start</div></a>
+    <div id="menu">
+        <a href="./quiz.html" id="ref"><div id="start">Start</div></a>
+    </div>
 <body>
 
 </body>

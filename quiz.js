@@ -219,12 +219,10 @@ function aufdecken(stapel) {
 }
 
 function showNextSDG() {
-    // console.log('cursor: ' + cursor);
     document.getElementById(cursor).style.visibility = 'visible';
     document.getElementById(cursor).style.opacity = "1.0";
     changeColor(colors[cursor]);
     if (cursor > 0) {
-        // document.getElementById(cursor - 1).style.visibility = 'hidden';
         document.getElementById(cursor - 1).style.opacity = "0.0";
     }
 }
@@ -285,7 +283,7 @@ function loadCategories(preSt) {
     for (let i = 0; i < 17; ++i) {
         kategorien[i] = 0;
     }
-    // Kategorien initialisieren (linke goals-leiste)
+    // Kategorien initialisieren (obere goals-leiste)
     for (let i = 0; i < preSt.length; i++) {
         kategorien[preSt[i].kategorie - 1]++;
     }
