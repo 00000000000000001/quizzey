@@ -1,8 +1,47 @@
-// certificate download
+// Download
 
 window.jsPDF = window.jspdf.jsPDF
 
-function showDownloadForm(){
+function generatePDF(name) {
+    var doc = new jsPDF();
+    var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
+    var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
+
+    // Logo
+    var img = new Image()
+    img.src = './canvas.png'
+    doc.addImage(img, 'png', 0, 0, 210, 297)
+
+
+    // Name der Zertifizierten Person
+    doc.setFontSize(42)/*.setFont(undefined, 'bold')*/;
+    doc.text(name, pageWidth / 2, 162, { align: 'center' });
+
+    // Datum
+    const date = new Date().toLocaleDateString()
+    doc.setFontSize(16).setFont(undefined, 'normal');
+    doc.text(date.toString(), 70, 227.4);
+
+    doc.save("sdg_certificate.pdf");
+}
+
+
+function download() {
+    const firstname = document.getElementById('firstname');
+    const lastname = document.getElementById('lastname');
+
+    if (/^\w+$/gm.test(firstname.value) && /^\w+$/gm.test(lastname.value)) {
+        const name = firstname.value + " " + lastname.value;
+        generatePDF(name);
+        hideDownloadForm();
+    } else {
+        const info = document.getElementById('info');
+        info.innerHTML = '';
+        info.innerHTML = 'Please enter your first and last name to succeed'
+    }
+}
+
+function showDownloadForm() {
     let labelFN = document.createElement('label');
     let labelLN = document.createElement('label');
     let textFN = document.createElement('input');
@@ -25,9 +64,6 @@ function showDownloadForm(){
     info.id = 'info';
     container.id = 'container';
 
-    // textFN.style.fontFamily = "initial";
-    // textLN.style.fontFamily = "initial";
-
     container.style = "display: flex; flex-direction: column; width: 20vw;";
 
     button.addEventListener("click", download);
@@ -38,55 +74,15 @@ function showDownloadForm(){
     container.appendChild(textLN);
     container.appendChild(button);
     container.appendChild(info);
-    
+
     document.getElementById('karte').appendChild(title);
     document.getElementById('karte').appendChild(container);
-    
+
 }
 
 function hideDownloadForm() {
     const container = document.getElementById('container');
     container.remove();
-}
-
-function download(){
-    const firstname = document.getElementById('firstname');
-    const lastname = document.getElementById('lastname');
-
-    if( /^\w+$/gm.test(firstname.value) && /^\w+$/gm.test(lastname.value)){
-        const name = firstname.value + " " + lastname.value;
-        generatePDF(name);
-        hideDownloadForm();
-    }else{
-        const info = document.getElementById('info');
-        info.innerHTML = '';
-        info.innerHTML = 'Please enter your first and last name to succeed'
-    }
-    
-    
-}
-
-function generatePDF(name){
-    var doc = new jsPDF();
-    var pageHeight = doc.internal.pageSize.height || doc.internal.pageSize.getHeight();
-    var pageWidth = doc.internal.pageSize.width || doc.internal.pageSize.getWidth();
-    
-    // Logo
-    var img = new Image()
-    img.src = './canvas.png'
-    doc.addImage(img, 'png', 0, 0, 210, 297)
-
-    
-    // Name der Zertifizierten Person
-    doc.setFontSize(42)/*.setFont(undefined, 'bold')*/;
-    doc.text(name, pageWidth / 2, 162, {align: 'center'});
-    
-    // Datum
-    const date = new Date().toLocaleDateString()
-    doc.setFontSize(16).setFont(undefined, 'normal');
-    doc.text(date.toString(), 70, 227.4);
-    
-    doc.save("sdg_certificate.pdf");
 }
 
 // QUIZ
@@ -161,7 +157,7 @@ function sortieren(stapel) {
 function gameover() {
     document.getElementById('karte').innerHTML = "";
     changeColor('#f8fff2');
-    
+
     const percent = Math.round(100 / numberOfQuestions * right);
 
     const auswertung = document.createElement('p');
@@ -237,10 +233,10 @@ function updateSDG() {
     // Wenn eine Kategorie beendet wurde
     if (kategorien[cursor] === beantwortet[cursor] && cursor < 17) {
         ++cursor;
-        if(cursor < 17){
+        if (cursor < 17) {
             showNextSDG();
         }
-        
+
     }
 }
 
@@ -264,14 +260,7 @@ function beantworten(antwort) {
     }
     beantwortet[aktuelle_frage.kategorie - 1]++;
     updateSDG();
-    // console.log('cursor: ' + cursor);
-    // console.log('answered: ' + beantwortet);
     aufdecken(stapel);
-    // update_nav();
-
-    // console.log('categories' + kategorien);
-
-
 }
 
 function fetch_json(filename) {
@@ -280,27 +269,16 @@ function fetch_json(filename) {
     });
 }
 
-let preStapel = [];
-
 async function loadQuestions(file) {
+    let preStapel = [];
     // Fragen sammeln
     const a = await fetch_json(file);
     for (const [key, value] of Object.entries(a)) {
-        // console.log(`key: ${key} value: ${value}`);
         let index = key - 1;
         preStapel.push(value);
-        // console.log('catagory: ' + value.kategorie);
         numberOfQuestions++;
     }
-    // console.log('preStapel: ' + preStapel);
-
-    // // Genau eine Frage pro Kategorie auf den stapel legen
-    // for (i = 0; i < 17; ++i){
-    //     // stapel.push(sorted[Math.random() * sorted[i].length]); 
-    //     console.log(`cat: ${i + 1} size: ${preStapel[i].length} ran: ${Math.random() * preStapel}`);
-    // }
-
-    
+    return preStapel;
 }
 
 let cat1 = [];
@@ -322,26 +300,24 @@ let cat16 = [];
 let cat17 = [];
 
 
-function loadCategories(arr){
-    for (let i = 0; i < 17; ++i){
+function loadCategories(preSt) {
+    for (let i = 0; i < 17; ++i) {
         kategorien[i] = 0;
     }
     // Kategorien initialisieren (linke goals-leiste)
-    for (let i = 0; i < arr.length; i++) {
-        kategorien[arr[i].kategorie - 1]++;
+    for (let i = 0; i < preSt.length; i++) {
+        kategorien[preSt[i].kategorie - 1]++;
     }
 }
 
 
-function loadStapel(){
+function loadStapel(preStapel) {
     sortieren(preStapel);
-    // console.log('preStapel: ' + preStapel);
     loadCategories(preStapel);
-    // console.log('categories: ' + kategorien)
 
     // einsortieren
-    for (i=0; i < preStapel.length; ++i){
-        switch (preStapel[i].kategorie){
+    for (i = 0; i < preStapel.length; ++i) {
+        switch (preStapel[i].kategorie) {
             case 1:
                 cat1.push(preStapel[i]);
                 break;
@@ -398,8 +374,6 @@ function loadStapel(){
 
     }
 
-    // console.log('stapel: ' + stapel)
-
     // aus jeder Kategorie eine Frage wäehlen
     stapel.push(cat17[Math.floor(Math.random() * cat17.length)]);
     stapel.push(cat16[Math.floor(Math.random() * cat16.length)]);
@@ -418,13 +392,10 @@ function loadStapel(){
     stapel.push(cat3[Math.floor(Math.random() * cat3.length)]);
     stapel.push(cat2[Math.floor(Math.random() * cat2.length)]);
     stapel.push(cat1[Math.floor(Math.random() * cat1.length)]);
-    // console.log('ran: ' + stapel)
 
     numberOfQuestions = stapel.length;
-    
-    loadCategories(stapel);
 
-    // console.log('cat: ' + kategorien);
+    loadCategories(stapel);
 
     showNextSDG();
     changeColor(colors[0]);
@@ -436,14 +407,14 @@ function loadStapel(){
     document.getElementById('ergebnis').style.color = 'white';
 }
 
-function start(file) {
-    loadQuestions('fragen.json').then(_ => {
+function start() {
+    // loadQuestions lädt alle Fragen in den preStapel
+    loadQuestions('fragen.json').then(preStapel => {
         // 1. Kartenstapel zusammenstellen
-        loadStapel();
+        loadStapel(preStapel);
         // 2. Nächste Frage stellen
         aufdecken(stapel);
     });
-
 }
 
 start();

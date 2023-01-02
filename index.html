@@ -1,77 +1,58 @@
 <!DOCTYPE html>
-    <head>
-	<title> SDG Prototype </title>
-        <style>
-			body{
-			text-align:center;
-			background-color: #f8fff2;
-			}
-			
-			h1{
-			 color: #007ba8;
-			}
-			
-			#a, #b, #c, #d{
-			color:#809d67;
-			font-size: 25px;
-			padding: 1px;
-			margin: 25px;
-			font-weight: bold;
-			}
-			
-			#a:hover {
-			 color:#699c3d;
-			 font-size: 30px;
-			}
-			#b:hover {
-			  color: #699c3d;
-			  font-size: 30px;
-			}
-			#c:hover {
-			 color:#699c3d;
-			 font-size: 30px;
-			}
-			#d:hover {
-			  color:#699c3d;
-			  font-size: 30px;
-			}
-			
-			#Frage{
-			color:#007ba8;
-			font-weight: bold;
-			font-size:30px;
-			margin-top: 50px;
-			margin-bottom: 10px;
-			}
-			
-			#rightwrong{
-			color: #809d67;
-			font-weight: bold;
-			font-size:25px;
-			margin: 25px;
-			}
-			
-			#Karte{
-			color: #007ba8;
-			font-weight: bold;
-			font-size:25px;
-			margin: 25px;
-			}
 
-        </style>
-        <script defer src="index.js"></script>
-    </head>
-    <body>
-        <h1>Learn more about the SDGs - Take the SDG Quiz</h1>
-        <div id="Karte"> <!-- ober div fuer frage und antwort-->
-            <i><p id="Frage"></p></i> <!--div fuer frage-->
-            <div id="Antworten"> <!--div fuer  antwort-->
-                <div id="a" onclick="beantworten(0)"></div>
-                <div id="b" onclick="beantworten(1)"></div>
-                <div id="c" onclick="beantworten(2)"></div>
-                <div id="d" onclick="beantworten(3)"></div>
-				<div id="rightwrong"> </div>
-            </div>
-			<div id="ergebniss"> </div>
-        </div>
-    </body>
+<head>
+	<meta charset="utf-8">
+    <style>
+        *{
+            box-sizing: border-box;
+            /* border: dotted thin black; */
+            padding: 0.5em;
+        }
+        body{
+            background-color: #f8fff2;
+        }
+        h1{
+            color: #007ba8;
+        }
+        ul{
+            color:#809d67;
+            list-style-type: square;
+        }
+        li{
+            
+        }
+        a{
+            color: #007ba8;
+        }
+        #start{
+            width: 100px;
+            text-align: center;
+            background-color: #007ba8;
+            border-top: solid thin white;
+            border-left: solid thin white;
+        }
+        #ref{
+            color: #f8fff2;
+            text-decoration: none;
+        }
+    </style>
+	<title> SDG Quiz </title>
+</head>
+    <h1> SDG Quiz</h1>
+
+    <ul>
+        <li>
+            Read info <a href="https://sdgs.un.org/goals">here</a> and <a href="https://www.undp.org/sustainable-development-goals">here</a>
+        </li>
+        <li>
+            Master at least 80% of the Questions
+        </li>
+        <li>
+            Receive the official ISEDE certificate!
+        </li>
+    </ul>
+
+    <a href="./quiz.html" id="ref"><div id="start">Start</div></a>
+<body>
+
+</body>
