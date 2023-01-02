@@ -7,7 +7,7 @@ You need to install
 
 Clone project
 - open Git Bash and navigate to your root web directory: ```dir xampp\htdocs```
-- clone project: ```git clone https://github.com/00000000000000001/quizzey.git```
+- also in Git Bash clone the project: ```git clone https://github.com/00000000000000001/quizzey.git```
 
 Start the game
 - open website in your browser: localhost/quizzey
