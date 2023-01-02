@@ -6,7 +6,7 @@ You need to install
 - git: https://git-scm.com/download/win
 
 Clone project
-- open cd and navigate to your root web directory: dir xampp\htdocs
+- open Git Bash and navigate to your root web directory: dir xampp\htdocs
 - clone project: git clone https://github.com/00000000000000001/quizzey.git
 
 Start the game
