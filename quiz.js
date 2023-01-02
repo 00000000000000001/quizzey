@@ -167,7 +167,8 @@ function gameover() {
         auswertung.textContent += "You are a sustainable homie! Download the certificate.";
         showDownloadForm();
     } else {
-        auswertung.textContent += "You need min. 80% of the questions right to succeed. Try againg!";
+        auswertung.textContent += "You need at least 80% of the questions right to succeed. Try againg!";
+        // TODO: add "try again" button
     }
 
     document.getElementById('karte').appendChild(auswertung);
