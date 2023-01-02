@@ -10,7 +10,7 @@ Clone project
 - clone project: git clone https://github.com/00000000000000001/quizzey.git
 
 Start the game
-- open website in your browser: localhost:8080/quizzey
+- open website in your browser: localhost/quizzey
 ## Fragen hinzufügen
 Die Fragen und Antworten müssen nur zur JSON Datei (fragen.json) hinzugefügt werden.
 ## Fehler: Quellübergreifende (Cross-Origin) Anfrage blockiert
