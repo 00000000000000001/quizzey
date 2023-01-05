@@ -235,7 +235,6 @@ function updateSDG() {
         if (cursor < 17) {
             showNextSDG();
         }
-
     }
 }
 
@@ -368,7 +367,6 @@ function selectQuestions(preStapel) {
                 break;
             default:
         }
-
     }
 
     // aus jeder category eine question wäehlen
@@ -423,14 +421,14 @@ function start() {
 
 
 // clears header, article and footer
-function clearPage(){
+function clearPage() {
     document.getElementById('header').innerHTML = '';
     document.getElementById('article').innerHTML = '';
     document.getElementById('footer').innerHTML = '';
 }
 
 // hides the SDGs
-function hideSDGs(){
+function hideSDGs() {
     document.getElementById('0').style.opacity = '0.0';
     document.getElementById('1').style.opacity = '0.0';
     document.getElementById('2').style.opacity = '0.0';
@@ -451,7 +449,7 @@ function hideSDGs(){
 }
 
 // shows gamecard (question and answers)
-function showCard(){
+function showCard() {
     let card = document.createElement('div');
     let question = document.createElement('div');
     let answers = document.createElement('div');
@@ -460,10 +458,10 @@ function showCard(){
     let c = document.createElement('c');
     let d = document.createElement('d');
 
-    a.addEventListener('click', function(){answer('0')});
-    b.addEventListener('click', function(){answer('1')});
-    c.addEventListener('click', function(){answer('2')});
-    d.addEventListener('click', function(){answer('3')});
+    a.addEventListener('click', function () { answer('0') });
+    b.addEventListener('click', function () { answer('1') });
+    c.addEventListener('click', function () { answer('2') });
+    d.addEventListener('click', function () { answer('3') });
 
     card.appendChild(question);
     card.appendChild(answers);
@@ -484,7 +482,7 @@ function showCard(){
 }
 
 // starts game
-function showGame(){
+function showGame() {
     clearPage();
     // hide SDGs
     hideSDGs();
@@ -493,7 +491,7 @@ function showGame(){
 }
 
 // shows frontpage
-function showFront(){
+function showFront() {
     // create title
     let title = document.createElement('h1');
     title.textContent = "THE 17 GOALS QUIZ";
@@ -515,7 +513,7 @@ function showFront(){
     li2.textContent = 'Master at least 80% of the questions';
     let li3 = document.createElement('li');
     li3.textContent = 'Receive the official ISEDE certificate';
-    
+
     // create game menu
     let menu = document.createElement('div');
     let button = document.createElement('div');
