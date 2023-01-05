@@ -155,7 +155,8 @@ function sortieren(stapel) {
 }
 
 function gameover() {
-    clearPage();
+    // clearPage(); // hierdurch wird die die Antwort auf die letzte Frage nicht mehr richtig angezeight
+    document.getElementById('article').innerHTML = '';
     changeColor('#f8fff2');
 
     const percent = Math.round(100 / numberOfQuestions * right);
@@ -247,13 +248,13 @@ function showAllSDG() {
 function answer(antwort) {
     // Bei correcter Antwort:
     if (antwort == aktuelle_question.correct) {
-        document.getElementById('footer').innerHTML = "Right answer!";
+        document.getElementById('footer').innerHTML = "Right answer!&nbsp; ";
         ++right;
     }
     // Bei falscher Antwort:
     else {
         const correct = aktuelle_question.correct;
-        document.getElementById('footer').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[correct]} :  "${aktuelle_question.answers[correct]}"`);
+        document.getElementById('footer').innerHTML = (`Wrong! The right answer wouldve been ${buchstaben[correct]} :  "${aktuelle_question.answers[correct]}".&nbsp;`);
         ++wrong;
     }
     beantwortet[aktuelle_question.category - 1]++;
