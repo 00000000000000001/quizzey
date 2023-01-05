@@ -31,7 +31,7 @@ function download() {
     const firstname = document.getElementById('firstname');
     const lastname = document.getElementById('lastname');
 
-    if (/^\w+$/gm.test(firstname.value) && /^\w+$/gm.test(lastname.value)) {
+    if (/^[\w-]+$/gm.test(firstname.value) && /^[\w-]+$/gm.test(lastname.value)) {
         const name = firstname.value + " " + lastname.value;
         generatePDF(name);
         hideDownloadForm();
