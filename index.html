@@ -29,7 +29,7 @@
 
         #mainpage {
             display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            grid-template-columns: 5vw repeat(1, 1fr) 5vw;
             grid-template-rows: repeat(1, 1fr);
             /* height: 50%; */
         }
@@ -38,17 +38,22 @@
             /* background-color: #00548c; */
             display: flex;
             flex-wrap: wrap;
+            grid-column: 1 / 4;
         }
 
         #header {
             color: #007ba8;
             text-align: center;
+            /* background-color: #809d67; */
+            grid-column: 1 / 4;
+            min-height: 7vh;
         }
 
         .sdg {
             width: calc(100% / 17);
             display: flex;
             transition: opacity 1s ease;
+
         }
 
         article {
@@ -60,6 +65,7 @@
             flex-direction: column;
             /* text-align: center; */
             padding: 0.5em;
+            grid-column: 1 / 4;
         }
 
         #menu {
@@ -67,6 +73,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
         }
 
         #start {
@@ -107,7 +114,7 @@
         #question {
             /* background-color: fuchsia; */
             font-size: 150%;
-            min-height: 25vh;
+            /* min-height: 25vh; */
             /* width: 100%; */
             display: flex;
             align-items: center;
@@ -156,6 +163,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            grid-column: 2 / 3;
+            text-align: center;
         }
     </style>
     <title> SDG Prototype </title>

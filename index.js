@@ -124,7 +124,6 @@ function mischen(arr) {
 }
 
 function mixAnswers(question) {
-    console.log(question);
     // answers mischen
     const correct = question.answers[question.correct]; // TODO: FEHLER bei category 3
 
@@ -184,7 +183,7 @@ function gameover() {
 function showQuestion(detailed) {
 
     // question anzeigen
-    let p = document.getElementById('question');
+    let p = document.getElementById('question_text');
     if (detailed) {
         p.textContent = aktuelle_question.category + ': ' + aktuelle_question.question;
     } else {
@@ -198,14 +197,8 @@ function aufdecken(stapel) {
         gameover();
         return;
     }
-    
-    // console.log(stapel);
-
 
     aktuelle_question = stapel.pop();
-
-    // console.log(aktuelle_question);
-
 
     showQuestion(false);
 
@@ -466,6 +459,7 @@ function hideSDGs() {
 function showCard() {
     let card = document.createElement('div');
     let question = document.createElement('div');
+    let question_text = document.createElement('div');
     let answers = document.createElement('div');
     let a = document.createElement('a');
     let b = document.createElement('b');
@@ -477,6 +471,7 @@ function showCard() {
     c.addEventListener('click', function () { answer('2') });
     d.addEventListener('click', function () { answer('3') });
 
+    question.appendChild(question_text);
     card.appendChild(question);
     card.appendChild(answers);
     answers.appendChild(a);
@@ -486,6 +481,7 @@ function showCard() {
 
     card.id = 'card';
     question.id = 'question';
+    question_text.id = 'question_text';
     answers.id = 'answers';
     a.id = 'a';
     b.id = 'b';
