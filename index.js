@@ -104,7 +104,7 @@ let wrong = 0;
 
 const buchstaben = ['A', 'B', 'C', 'D'];
 
-let categoryn = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+let category = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let beantwortet = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let cursor = 0;
 
@@ -123,13 +123,15 @@ function mischen(arr) {
     return arr;
 }
 
-function mixAnswers(card) {
+function mixAnswers(question) {
+    console.log(question);
     // answers mischen
-    const correct = card.answers[card.correct];
-    const gemischt = mischen(card.answers);
+    const correct = question.answers[question.correct]; // TODO: FEHLER bei category 3
+
+    const gemischt = mischen(question.answers);
     // correcte Antwort finden
-    card.correct = Object.keys(gemischt).find(key => gemischt[key] === correct);
-    card.answers = gemischt;
+    question.correct = Object.keys(gemischt).find(key => gemischt[key] === correct);
+    question.answers = gemischt;
 }
 
 // sucht nach der question mit der niedrigsten category ab Stelle l
@@ -180,6 +182,7 @@ function gameover() {
 }
 
 function showQuestion(detailed) {
+
     // question anzeigen
     let p = document.getElementById('question');
     if (detailed) {
@@ -195,12 +198,19 @@ function aufdecken(stapel) {
         gameover();
         return;
     }
+    
+    // console.log(stapel);
+
 
     aktuelle_question = stapel.pop();
+
+    // console.log(aktuelle_question);
+
 
     showQuestion(false);
 
     mixAnswers(aktuelle_question);
+
 
     // answers anzeigen
     let a = document.getElementById('a');
@@ -230,7 +240,7 @@ function showNextSDG() {
 
 function updateSDG() {
     // Wenn eine category beendet wurde
-    if (categoryn[cursor] === beantwortet[cursor] && cursor < 17) {
+    if (category[cursor] === beantwortet[cursor] && cursor < 17) {
         ++cursor;
         if (cursor < 17) {
             showNextSDG();
@@ -276,17 +286,19 @@ async function loadQuestions(file) {
         preStapel.push(value);
         numberOfQuestions++;
     }
+
     return preStapel;
 }
 
 function loadCategories(preSt) {
     for (let i = 0; i < 17; ++i) {
-        categoryn[i] = 0;
+        category[i] = 0;
     }
-    // categoryn initialisieren (obere goals-leiste)
+    // category initialisieren (obere goals-leiste)
     for (let i = 0; i < preSt.length; i++) {
-        categoryn[preSt[i].category - 1]++;
+        category[preSt[i].category - 1]++;
     }
+    
 }
 
 
@@ -369,6 +381,7 @@ function selectQuestions(preStapel) {
         }
     }
 
+
     // aus jeder category eine question wäehlen
     stapel.push(cat17[Math.floor(Math.random() * cat17.length)]);
     stapel.push(cat16[Math.floor(Math.random() * cat16.length)]);
@@ -409,7 +422,8 @@ function start() {
         selectQuestions(questions);
         // 2. Nächste question stellen
         aufdecken(stapel);
-    });
+    });   
+
 }
 
 

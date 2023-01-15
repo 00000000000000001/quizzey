@@ -1,192 +1,192 @@
 <!DOCTYPE html>
 
 <head>
-	<meta charset="utf-8">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-	<script defer src="index.js"></script>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script defer src="index.js"></script>
 
-	<style>
-		@import url(//db.onlinewebfonts.com/c/458cf7aea231a973eb1beacfc13bb8b3?family=Roadgeek+2005+Series+B);
+    <style>
+        @import url(//db.onlinewebfonts.com/c/458cf7aea231a973eb1beacfc13bb8b3?family=Roadgeek+2005+Series+B);
 
-		@font-face {
-			font-family: "Roadgeek 2005 Series B";
-			src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot");
-			src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff") format("woff"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.svg#Roadgeek 2005 Series B") format("svg");
-		}
+        @font-face {
+            font-family: "Roadgeek 2005 Series B";
+            src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot");
+            src: url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.woff") format("woff"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/458cf7aea231a973eb1beacfc13bb8b3.svg#Roadgeek 2005 Series B") format("svg");
+        }
 
-		* {
-			/* border: dotted thin black; */
-			/* transition: all 1s ease; */
-			box-sizing: border-box;
-		}
+        * {
+            /* border: dotted thin black; */
+            /* transition: all 1s ease; */
+            box-sizing: border-box;
+        }
 
-		body {
-			transition: background-color 1s ease-out;
-			/* text-align: center; */
-			background-color: #f8fff2;
-			/* height: 100%; */
-		}
+        body {
+            transition: background-color 1s ease-out;
+            /* text-align: center; */
+            background-color: #f8fff2;
+            /* height: 100%; */
+        }
 
-		#mainpage {
-			display: grid;
-			grid-template-columns: repeat(1, 1fr);
-			grid-template-rows: repeat(1, 1fr);
-			/* height: 50%; */
-		}
+        #mainpage {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            /* height: 50%; */
+        }
 
-		#sdgs {
-			/* background-color: #00548c; */
-			display: flex;
-			flex-wrap: wrap;
-		}
+        #sdgs {
+            /* background-color: #00548c; */
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-		#header {
-			color: #007ba8;
-			text-align: center;
-		}
+        #header {
+            color: #007ba8;
+            text-align: center;
+        }
 
-		.sdg {
-			width: calc(100% / 17);
-			display: flex;
-			transition: opacity 1s ease;
-		}
+        .sdg {
+            width: calc(100% / 17);
+            display: flex;
+            transition: opacity 1s ease;
+        }
 
-		article {
-			/* background-color:#229c46; */
-			min-height: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			/* text-align: center; */
-			padding: 0.5em;
-		}
+        article {
+            /* background-color:#229c46; */
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* text-align: center; */
+            padding: 0.5em;
+        }
 
-		#menu {
-			/* background-color:#229c46; */
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+        #menu {
+            /* background-color:#229c46; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-		#start {
-			padding: 0.5em;
-			width: 15vw;
-			border-top: solid thin white;
-			border-left: solid thin white;
-			background-color: #007ba8;
-			color: #f8fff2;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+        #start {
+            padding: 0.5em;
+            width: 15vw;
+            border-top: solid thin white;
+            border-left: solid thin white;
+            background-color: #007ba8;
+            color: #f8fff2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-		#footer {
-			color: #809d67;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
+        #footer {
+            color: #809d67;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-		#info {}
-
-
+        #info {}
 
 
 
-		#card {
-			/* background-color: aqua; */
-			font-weight: bold;
-			font-size: 4vh;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			font-family: "Roadgeek 2005 Series B";
-		}
 
-		#question {
-			/* background-color: fuchsia; */
-			font-size: 150%;
-			min-height: 25vh;
-			/* width: 100%; */
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-bottom: solid thin white;
-			text-align: center;
-		}
 
-		#answers {
-			/* background-color: blueviolet; */
-			/* display: grid; */
-			/* gap: 1rem; */
-		}
+        #card {
+            /* background-color: aqua; */
+            font-weight: bold;
+            font-size: 4vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: "Roadgeek 2005 Series B";
+        }
 
-		#a,
-		#b,
-		#c,
-		#d {
-			transition: all 0.1s ease;
-			/* height: calc(100wh / 4 - 10vw);; */
-			/* font-size: 200%; */
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			text-align: center;
-		}
+        #question {
+            /* background-color: fuchsia; */
+            font-size: 150%;
+            min-height: 25vh;
+            /* width: 100%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: solid thin white;
+            text-align: center;
+        }
 
-		#a:hover {
-			font-size: 150%;
-		}
+        #answers {
+            /* background-color: blueviolet; */
+            /* display: grid; */
+            /* gap: 1rem; */
+        }
 
-		#b:hover {
-			font-size: 150%;
-		}
+        #a,
+        #b,
+        #c,
+        #d {
+            transition: all 0.1s ease;
+            /* height: calc(100wh / 4 - 10vw);; */
+            /* font-size: 200%; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-		#c:hover {
-			font-size: 150%;
-		}
+        #a:hover {
+            font-size: 150%;
+        }
 
-		#d:hover {
-			font-size: 150%;
-		}
+        #b:hover {
+            font-size: 150%;
+        }
 
-		#footer {
-			min-height: 10vh;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-	</style>
-	<title> SDG Prototype </title>
+        #c:hover {
+            font-size: 150%;
+        }
+
+        #d:hover {
+            font-size: 150%;
+        }
+
+        #footer {
+            min-height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <title> SDG Prototype </title>
 </head>
 
 <body>
-	<div id="mainpage">
-		<div id="sdgs">
-			<img src="./resources/sdg_1.svg" style="opacity: 0.0" class="sdg"  id="0">
-			<img src="./resources/sdg_2.svg" style="opacity: 0.0" class="sdg"  id="1">
-			<img src="./resources/sdg_3.svg" style="opacity: 0.0" class="sdg"  id="2">
-			<img src="./resources/sdg_4.svg" style="opacity: 0.0" class="sdg"  id="3">
-			<img src="./resources/sdg_5.svg" style="opacity: 0.0" class="sdg"  id="4">
-			<img src="./resources/sdg_6.svg" style="opacity: 0.0" class="sdg"  id="5">
-			<img src="./resources/sdg_7.svg" style="opacity: 0.0" class="sdg"  id="6">
-			<img src="./resources/sdg_8.svg" style="opacity: 0.0" class="sdg"  id="7">
-			<img src="./resources/sdg_9.svg" style="opacity: 0.0" class="sdg"  id="8">
-			<img src="./resources/sdg_10.svg" style="opacity: 0.0" class="sdg"  id="9">
-			<img src="./resources/sdg_11.svg" style="opacity: 0.0" class="sdg"  id="10">
-			<img src="./resources/sdg_12.svg" style="opacity: 0.0" class="sdg"  id="11">
-			<img src="./resources/sdg_13.svg" style="opacity: 0.0" class="sdg"  id="12">
-			<img src="./resources/sdg_14.svg" style="opacity: 0.0" class="sdg"  id="13">
-			<img src="./resources/sdg_15.svg" style="opacity: 0.0" class="sdg"  id="14">
-			<img src="./resources/sdg_16.svg" style="opacity: 0.0" class="sdg"  id="15">
-			<img src="./resources/sdg_17.svg" style="opacity: 0.0" class="sdg"  id="16">
-		</div>
-		<header id="header">
-		</header>
-		<article id="article">
-		</article>
-		<footer id="footer">
-		</footer>
-	</div>
+    <div id="mainpage">
+        <div id="sdgs">
+            <img src="./resources/sdg_1.svg" style="opacity: 0.0" class="sdg" id="0">
+            <img src="./resources/sdg_2.svg" style="opacity: 0.0" class="sdg" id="1">
+            <img src="./resources/sdg_3.svg" style="opacity: 0.0" class="sdg" id="2">
+            <img src="./resources/sdg_4.svg" style="opacity: 0.0" class="sdg" id="3">
+            <img src="./resources/sdg_5.svg" style="opacity: 0.0" class="sdg" id="4">
+            <img src="./resources/sdg_6.svg" style="opacity: 0.0" class="sdg" id="5">
+            <img src="./resources/sdg_7.svg" style="opacity: 0.0" class="sdg" id="6">
+            <img src="./resources/sdg_8.svg" style="opacity: 0.0" class="sdg" id="7">
+            <img src="./resources/sdg_9.svg" style="opacity: 0.0" class="sdg" id="8">
+            <img src="./resources/sdg_10.svg" style="opacity: 0.0" class="sdg" id="9">
+            <img src="./resources/sdg_11.svg" style="opacity: 0.0" class="sdg" id="10">
+            <img src="./resources/sdg_12.svg" style="opacity: 0.0" class="sdg" id="11">
+            <img src="./resources/sdg_13.svg" style="opacity: 0.0" class="sdg" id="12">
+            <img src="./resources/sdg_14.svg" style="opacity: 0.0" class="sdg" id="13">
+            <img src="./resources/sdg_15.svg" style="opacity: 0.0" class="sdg" id="14">
+            <img src="./resources/sdg_16.svg" style="opacity: 0.0" class="sdg" id="15">
+            <img src="./resources/sdg_17.svg" style="opacity: 0.0" class="sdg" id="16">
+        </div>
+        <header id="header">
+        </header>
+        <article id="article">
+        </article>
+        <footer id="footer">
+        </footer>
+    </div>
 </body>

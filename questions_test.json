@@ -1,0 +1,783 @@
+{
+    "1":{
+        "question": "There is corruption in every region, how many businesses have revived bribe request from public officials?",
+        "answers": [
+            "1 in 6 businesses",
+            "1 in 22 businesses",
+            "1 in 17 businesses",
+            "1 in 9 business"
+        ],
+        "correct": 0,
+        "category": 16
+    },
+    "2":{
+        "question": "How much of the world population has a fear of walking alone at night in their neighborhood?",
+        "answers": [
+            "1/3 - mostly woman",
+            "1/3 - mostly men",
+            "1/2 - mostly woman",
+            "1/2 - mostly men"
+        ],
+        "correct": 0,
+        "category": 16
+    },
+    "3":{
+        "question": "The world is witnessing the largest number of violent conflicts since…",
+        "answers": [
+            "1946",
+            "1965",
+            "1952",
+            "1974"
+        ],
+        "correct": 0,
+        "category": 16
+    },
+    "4":{
+        "question": "Rising debt burdens threatens…",
+        "answers": [
+            "Developing countries pandemic recovery",
+            "Wealthy countries development",
+            "Nothing at all",
+            "The economic growth"
+        ],
+        "correct": 0,
+        "category": 17
+    },
+    "5":{
+        "question": "How much did the use of internet uptake from 2019 to 2021?",
+        "answers": [
+            "9%",
+            "5%",
+            "2%",
+            "11%"
+        ],
+        "correct": 0,
+        "category": 17
+    },
+    "6":{
+        "question": "Migrants should not have to…",
+        "answers": [
+            "Pay high fees to send money to their family in their country of origin",
+            "Pay low fees to send money to their family in their country of origin",
+            "Send money to their family",
+            "Send money to their country of origin"
+        ],
+        "correct": 0,
+        "category": 17
+    },
+    "7":{
+        "question": "How many primary schools lack electricity, drinking water and basic sanitation?",
+        "answers": [
+            "25%",
+            "75%",
+            "15%",
+            "56%"
+        ],
+        "correct": 0,
+        "category": 4
+    },
+    "8":{
+        "question": "How many children have missed more than half of their in-class instruction due to Covid-19?",
+        "answers": [
+            "147 Million children",
+            "17 Million Children",
+            "57 Million Children",
+            "187 Million Children"
+        ],
+        "correct": 0,
+        "category": 4
+    },
+    "9":{
+        "question": "Which of these target have to be meet for quality education?",
+        "answers": [
+            "Eliminate all discrimination in education",
+            "Eliminate all teachers in education",
+            "Eliminate all homework in education",
+            "Eliminate all technology in education"
+        ],
+        "correct": 0,
+        "category": 4
+    },
+    "10":{
+        "question": "How many Woman have been subjected to partner violence at least once in their lifetime?",
+        "answers": [
+            "More than 1 in 4 woman",
+            "More than 1 in 10 Woman",
+            "More than 1 in 20 Woman",
+            "More than 1 in 8 Woman"
+        ],
+        "correct": 0,
+        "category": 5
+    },
+    "11":{
+        "question": "How many woman make their own informed choices about sex and reproductive healthcare?",
+        "answers": [
+            "57%",
+            "36%",
+            "82%",
+            "18%"
+        ],
+        "correct": 0,
+        "category": 5
+    },
+    "12":{
+        "question": "How many young woman were married in childhood in 2021?",
+        "answers": [
+            "1 in 5 young woman",
+            "1 in 10 young woman",
+            "1 in 3 young woman",
+            "1 in 20 young woman"
+        ],
+        "correct": 0,
+        "category": 5
+    },
+    "13":{
+        "question": "How many wetlands of the planet have been lost in the last 300 years?",
+        "answers": [
+            "Over 85% have been lost",
+            "Over 15% have been lost",
+            "Over 35% have been lost",
+            "Over 55% have been lost"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "14":{
+        "question": "How many people live in countries with high and critical levels of water stress?",
+        "answers": [
+            "Over 733+ Million people",
+            "Over 158+ Million people",
+            "Over 733+ Thousand people",
+            "Over 158+ Thousand people"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "15":{
+        "question": "Access to safe water, sanitation and hygiene is…",
+        "answers": [
+            "One of the most basic needs for humans regarding health and well-being",
+            "One of the most basic needs for humans regarding warmth and rest",
+            "Not one of the most basic human needs",
+            "One of the safety needs for humans"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "16":{
+        "question": "What is true? The fight against poverty...",
+        "answers": [
+            "...is the ultimate goal of the 2030 Agenda",
+            "...is not a prerequisite for sustainable development",
+            "...has already been achieved to a large extent",
+            "...wont be possible"
+        ],
+        "correct": 0,
+        "category": 1
+    },
+    "17":{
+        "question": "Which country in Europe has the highest proportion of people living in absolute poverty?",
+        "answers": [
+            "Bulgaria",
+            "Georgia",
+            "Bosnia-Herzegovina",
+            "India"
+        ],
+        "correct": 1,
+        "category": 1
+    },
+    "18":{
+        "question": "In poor countries, the birth rate is often high. How many women in developing countries do not have access to contraceptives?",
+        "answers": [
+            "every second woman",
+            "every fourth woman",
+            "every eighth woman",
+            "Every tenth woman"
+        ],
+        "correct": 0,
+        "category": 1
+    },
+    "19":{
+        "question": "Every year, more people die of hunger than",
+        "answers": [
+            "Aids",
+            "Malaria and tuberculosis together",
+            "From all three diseases combined",
+            "None of these answers are correct"
+        ],
+        "correct": 2,
+        "category": 2
+    },
+    "20":{
+        "question": "How many people worldwide have to go to sleep hungry every night?",
+        "answers": [
+            "one in three",
+            "one in five",
+            "one in nine",
+            "one in a hundred"
+        ],
+        "correct": 2,
+        "category": 2
+    },
+    "21":{
+        "question": "What is the best nutrition for a newborn?",
+        "answers": [
+            "Breastfed",
+            "Drinking water",
+            "Bottle feed",
+            "Powdered milk"
+        ],
+        "correct": 0,
+        "category": 3
+    },
+    "22":{
+        "question": "How many minutes of exercise should children do every day?",
+        "answers": [
+            "Children don't need to exercise",
+            "1000 minutes",
+            "10 minutes",
+            "60 minutes"
+        ],
+        "correct": 3,
+        "category": 3
+    },
+    "23":{
+        "question": "How can air pollution affect our health?",
+        "answers": [
+            "Irritates eyes, ears, nose, and throats",
+            "Makes asthma worse and reduces lung function",
+            "Causes headaches",
+            "All of the above and more!"
+        ],
+        "correct": 3,
+        "category": 3
+    },
+    "24":{
+        "question": "In 2020, ___ of the global population had access to clean cooking fuels and technologies",
+        "answers": [
+            "69%",
+            "75%",
+            "55%",
+            "90%"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "25":{
+        "question": "How many people had no access to energy in the year 2020?",
+        "answers": [
+            "733 million",
+            "355 million",
+            "244 million",
+            "611 million"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "26":{
+        "question": "Ensure access to _____, _____, sustainable and modern energy for all",
+        "answers": [
+            "affordable, reliable",
+            "cheap, quick",
+            "transportable, reliable",
+            "transferable, affordable"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "27":{
+        "question": "How many children are engaged in child labour worldwide?",
+        "answers": [
+            "Every 1 in 10 (160 Million)",
+            "Every 1 in 7 (230 Million)",
+            "Every 1 in 16 (100 Million)",
+            "Every 1 in 20 (80 Million)"
+        ],
+        "correct": 0,
+        "category": 7
+    },
+    "28":{
+        "question": "What is the UN definition of sustainable tourism?",
+        "answers": [
+            "Tourism creates jobs and promotes local culture and products",
+            "Tourists don't leave behind any waste and consume sustainable products only",
+            "Tourism is only sustainable up to a certain ratio of 10 locals per tourist",
+            "The tourism direct GDP may not take up more than 40% of the country's total GDP"
+        ],
+        "correct": 0,
+        "category": 7
+    },
+    "29":{
+        "question": "How does the UN try to achieve higher levels of economic productivity, with a focus on high-value added and labour-intensive sectors?",
+        "answers": [
+            "Diversification, technological upgrading and innovation",
+            "More employees, less working hours and better salaries",
+            "Outsourcing, labour surcharges and coffee breaks",
+            "Globalized cooperation, robot assistance and market centralization"
+        ],
+        "correct": 0,
+        "category": 7
+    },
+    "30":{
+        "question": "How many small-scale industries have access to financial support for recovery (~333 Million Industries)?",
+        "answers": [
+            "Every 1 in 3 (111 Million)",
+            "Every 1 in 2 (166 Million)",
+            "Every industry has access",
+            "Every 1 in 5 (66,6 Million)"
+        ],
+        "correct": 0,
+        "category": 8
+    },
+    "31":{
+        "question": "Which technology sector is more resilient to a crisis-related production shortage? (Which tech sector has the least recession during a crisis?)",
+        "answers": [
+            "High Technology (e.g. Computer, Cars, Nuclear Powerplants)",
+            "Deep Technology (Cutting edge start-up technology)",
+            "Medium Technology (Electronically assisted, but not humanly independant technology)",
+            "Low Technology (e.g. Fully mechanical working tools)"
+        ],
+        "correct": 0,
+        "category": 8
+    },
+    "32":{
+        "question": "By 2020, the United Nations wanted to improve access to what kind of technology for the least developed countries?",
+        "answers": [
+            "Communication technology and universal access to the internet",
+            "Smartphones and Notebooks",
+            "Nuclear power plants and public transport",
+            "Genetically modified seeds and fertilizers"
+        ],
+        "correct": 0,
+        "category": 8
+    },
+    "33":{
+        "question": "In more and more areas, machines and robots are taking over the work. Which measure would be the least suitable to cushion this transformation process fuelled by digitalisation and artificial intelligence (AI)?",
+        "answers": [
+            "An unconditional basic income",
+            "A significant increase in weekly working hours",
+            "School education tailored to creativity and social skills",
+            "Becoming a robot yourself"
+        ],
+        "correct": 1,
+        "category": 8
+    },
+    "34":{
+        "question": "How many of the coral reefs will die if global temperatures rise by 1.5°C by 2100?",
+        "answers": [
+            "About 80%",
+            "About 60%",
+            "About 40%",
+            "About 20%"
+        ],
+        "correct": 0,
+        "category": 13
+    },
+    "35":{
+        "question": "Droughts will displace how many people from their region by 2030?",
+        "answers": [
+            "700 Million",
+            "500 Million",
+            "100 Million",
+            "300 Million"
+        ],
+        "correct": 0,
+        "category": 13
+    },
+    "36":{
+        "question": "In 2015, 44 countries have signed the Paris Agreement and implemented disaster risk reduction strategies that promote policy coherence with the Sustainable Development Goals. How many are there now (31st September 2021)?",
+        "answers": [
+            "118",
+            "78",
+            "56",
+            "131"
+        ],
+        "correct": 0,
+        "category": 13
+    },
+    "37":{
+        "question": "What endangers life below water?",
+        "answers": [
+            "Pollution, ocean warming, acidification, eutrophication and over fishing",
+            "Ocean cooling, not fishing enough, not enough acidification",
+            "Too many deep sea dangers",
+            "Too many sunken ships"
+        ],
+        "correct": 0,
+        "category": 14
+    },
+    "38":{
+        "question": "How much plastic polluted and entered the ocean in 2021?",
+        "answers": [
+            "17+ Million metric tons",
+            "20+ Million metric tons",
+            "14+ Million metric tons",
+            "9+ Million metric tons"
+        ],
+        "correct": 0,
+        "category": 14
+    },
+    "39":{
+        "question": "How many CO2 emissions does the ocean absorb every year?",
+        "answers": [
+            "About 1/4th",
+            "About 1/6th",
+            "About 1/10th",
+            "About 1/8th"
+        ],
+        "correct": 0,
+        "category": 14
+    },
+    "40":{
+        "question": "How many hectares of forest are destroyed every year?",
+        "answers": [
+            "10 Million hectares",
+            "15 Million hectares",
+            "5 Million hectares",
+            "2 Million hectares"
+        ],
+        "correct": 0,
+        "category": 15
+    },
+    "41":{
+        "question": "Approximately how many species are at risk of extinction over the coming decades?",
+        "answers": [
+            "Approximately 40,000 species",
+            "Approximately 20,000 species",
+            "Approximately 10,000 species",
+            "Approximately 30,000 species"
+        ],
+        "correct": 0,
+        "category": 15
+    },
+    "42":{
+        "question": "Safeguarding key biodiversity areas through the establishment of protected areas or other effective area-based conservation is an essential contribution towards which Sustainable Development goals? What are the themes of these goals?",
+        "answers": [
+            "Life Below Water & Life on Land",
+            "Responsible Consumption and Production & Sustainable Cities and Countries",
+            "Clean Water and Sanitation & Life on Land",
+            "Climate Action and Partnership for the Goals"
+        ],
+        "correct": 0,
+        "category": 15
+    },
+    "43":{
+        "question": "Which country supplies more than 90 percent of its energy from renewable sources and wants to be the first in the world to be CO2 neutral?",
+        "answers": [
+            "Norway",
+            "Costa Rica",
+            "Denmark",
+            "Germany"
+        ],
+        "correct": 1,
+        "category": 7
+    },
+    "44":{
+        "question": "What percentage of the world's coal reserves must remain in the ground to limit global warming to two degrees Celsius?",
+        "answers": [
+            "55%",
+            "73%",
+            "80%",
+            "40%"
+        ],
+        "correct": 2,
+        "category": 7
+    },
+    "45":{
+        "question": "In which country is the world's first nuclear waste repository currently being built?",
+        "answers": [
+            "Russia",
+            "USA",
+            "Finland",
+            "Denmark"
+        ],
+        "correct": 2,
+        "category": 7
+    },
+    "46":{
+        "question": "How many people are forced to leave their homes every day?",
+        "answers": [
+            "10,000 - 15,000 people",
+            "20,000 - 25,000 people",
+            "35,000 - 40,000 people",
+            "50,000 - 70,000 people"
+        ],
+        "correct": 2,
+        "category": 10
+    },
+    "47":{
+        "question": "Which of the following expressions does reflect the human dignity of the refugees?",
+        "answers": [
+            "Asylum tourist",
+            "Asylum seeker",
+            "Asylum simulant",
+            "Asylum Refugee"
+        ],
+        "correct": 1,
+        "category": 10
+    },
+    "48":{
+        "question": "On average, women in Europe earn less than men. In which of these countries is the difference the greatest?",
+        "answers": [
+            "Germany",
+            "Estonia",
+            "Romania",
+            "Spain"
+        ],
+        "correct": 1,
+        "category": 10
+    },
+    "49":{
+        "question": "How many people already live in cities today?",
+        "answers": [
+            "more than a 10% of the world population",
+            "more than a 25% of the world population",
+            "more than a 33% of the world population",
+            "more than the 50% of the world population"
+        ],
+        "correct": 3,
+        "category": 11
+    },
+    "50":{
+        "question": "How do trees react to great heat?",
+        "answers": [
+            "They sweat and give off cooling water vapour",
+            "They discolour their leaves already in summer",
+            "They increase their CO2 absorption",
+            "reduce heat by modifiying air particules"
+        ],
+        "correct": 0,
+        "category": 11
+    },
+    "51":{
+        "question": "What is the fastest mode of transport in the city for distances of up to five kilometres?",
+        "answers": [
+            "Bicycle",
+            "Bus",
+            "Car",
+            "train"
+        ],
+        "correct": 0,
+        "category": 11
+    },
+    "52":{
+        "question": "Which country was one of the first in the world to ban plastic bags?",
+        "answers": [
+            "Rwanda",
+            "Boliviaus",
+            "Tanzania",
+            "Germany"
+        ],
+        "correct": 0,
+        "category": 12
+    },
+    "53":{
+        "question": "Which of these counts as a renewable, recyclable and raw material?",
+        "answers": [
+            "Hemp",
+            "Coal",
+            "Oil palm",
+            "Coltan"
+        ],
+        "correct": 0,
+        "category": 12
+    },
+    "54":{
+        "question": "What type of travel is considered sustainable tourism?",
+        "answers": [
+            "Train journey",
+            "Air travel",
+            "Car journey",
+            "Ship journey"
+        ],
+        "correct": 0,
+        "category": 12
+    },
+    "55":{
+        "question": "The first sustainable development goal is:",
+        "answers": [
+            "End poverty in all its forms everywhere",
+            "Make poverty worse",
+            "End wealth",
+            "Stop poverty from getting better"
+        ],
+        "correct": 0,
+        "category": 1
+    },
+    "56":{
+        "question": "The second sustainable development goal is:",
+        "answers": [
+            "Promote all forms of agriculture, nutrition and encourage hunger",
+            "Get good and delicious food for free",
+            "End all hunger in the world",
+            "End hunger, achieve food security and improved nutrition and promote sustainable agriculture"
+        ],
+        "correct": 3,
+        "category": 2
+    },
+    "57":{
+        "question": "The third sustainable development goal is:",
+        "answers": [
+            "Ensure healthy lives and promote well-being for all",
+            "Ensure unhealthy lives and promote fast food",
+            "Ensure healthy lives and promote well-being for all at all ages",
+            "Ensure healthy lives for a high cost"
+        ],
+        "correct": 2,
+        "category": 3
+    },
+    "58":{
+        "question": "The fourth sustainable development goal is:",
+        "answers": [
+            "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all",
+            "Ensure quality education and promote lifelong learning",
+            "Ensure lifelong learning opportunities, inclusive and equitable quality education for the rich",
+            "Ensure inclusive and equitable quality education"
+        ],
+        "correct": 0,
+        "category": 4
+    },
+    "59":{
+        "question": "The fifth sustainable development goal is:",
+        "answers": [
+            "Achieve gender equuality and empower all women and girls",
+            "Achieve gender equuality and empower all men and boys",
+            "Achieve gender equuality and empower all non-binary people",
+            "Achieve gender equuality and empower all rich people"
+        ],
+        "correct": 0,
+        "category": 5
+    },
+    "60":{
+        "question": "The 6th sustainable development goal is:",
+        "answers": [
+            "Ensure availability and sustainable managment of water and sanitation for all",
+            "Ensure availability and sustainable managment of water and sanitation for developing countries",
+            "Ensure availability of water and sanitation for all",
+            "Ensure water for all"
+        ],
+        "correct": 0,
+        "category": 6
+    },
+    "61":{
+        "question": "The 7th sustainable development goal is:",
+        "answers": [
+            "Ensure access to affordable,reliable,sustainable and modern energy for all",
+            "Ensure access to unaffordable,unreliable and unsustainable energy for all",
+            "Ensure access to easy and clean energy",
+            "Ensure no access to sustainable energy"
+        ],
+        "correct": 0,
+        "category": 7
+    },
+    "62":{
+        "question": "The 8th sustainable development goal is:",
+        "answers": [
+            "Promote sustained,inclusive and sustainable economic growth, full and productive employment and decent work for all",
+            "Promote economic growth, productive employment and hard work for all",
+            "Promote sustained economic growth with hard work and bad pay",
+            "Promote sustained,inclusive and sustainable economic growth"
+        ],
+        "correct": 0,
+        "category": 8
+    },
+    "63":{
+        "question": "The 9th sustainable development goal is:",
+        "answers": [
+            "Build resilient infrastructure, promote inclusive and sustainable industrilization and foster innovation",
+            "Build infrastructure, promote innovation",
+            "Build nothing",
+            "Build good and steady infrastructure"
+        ],
+        "correct": 0,
+        "category": 9
+    },
+    "64":{
+        "question": "The 10th sustainable development goal is:",
+        "answers": [
+            "Reduce inequality within and among countries",
+            "Reduce inequality",
+            "Reduce inequality among countries",
+            "Reduce equality within and among countries"
+        ],
+        "correct": 0,
+        "category": 10
+    },
+    "65":{
+        "question": "The 11th sustainable development goal is:",
+        "answers": [
+            "Make cities and human settlements inclusive, safe, resilient and sustainable",
+            "Make cities safe, resilient and sustainable",
+            "Make cities and human settlements unsafe",
+            "Make cities and human settlements resilient and sustainable"
+        ],
+        "correct": 0,
+        "category": 11
+    },
+    "66":{
+        "question": "The 12th sustainable development goal is:",
+        "answers": [
+            "Ensure sustainable consumption and production patterns",
+            "Ensure unsustainable consumption",
+            "Ensure consumption and production patterns",
+            "Ensure quality production patterns"
+        ],
+        "correct": 0,
+        "category": 12
+    },
+    "67":{
+        "question": "The 13th sustainable development goal is:",
+        "answers": [
+            "Take urgent action to combat climate change and its impacts",
+            "Take no action to combat climate change and its impacts",
+            "Take little action to combat climate change and its impacts",
+            "Take action to combat climate change"
+        ],
+        "correct": 0,
+        "category": 13
+    },
+    "68":{
+        "question": "The 14th sustainable development goal is:",
+        "answers": [
+            "Conserve and sustainably use the oceans,seas and marine resources for sustainable development",
+            "Conserve and sustainably use the oceans",
+            "Pollut the oceans,seas and marine resources",
+            "Sustainably use the oceans marine resources for sustainable development"
+        ],
+        "correct": 0,
+        "category": 14
+    },
+    "69":{
+        "question": "The 15th sustainable development goal is:",
+        "answers": [
+            "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reserve land degradation and halt biodiversity loss",
+            "Promote unsustainable use of terrestrial ecosystems, unsustainably manage forests and dont halt and reserve land degradation and dont halt biodiversity loss",
+            "Promote pollution, littering and forest fires",
+            "Protect, restore and promote sustainable use of terrestrial ecosystems and sustainably manage forests"
+        ],
+        "correct": 0,
+        "category": 15
+    },
+    "70":{
+        "question": "The 16th sustainable development goal is:",
+        "answers": [
+            "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels",
+            "Promote unsafe and non inclusive societies, do not provide access to justice for all and build ineffective and non inclusive institutions at all levels",
+            "Promote peaceful and inclusive societies for sustainable development",
+            "Provide access to justice for all and build effective, accountable and inclusive institutions at all levels"
+        ],
+        "correct": 0,
+        "category": 16
+    },
+    "71":{
+        "question": "The 17th sustainable development goal is:",
+        "answers": [
+            "Strengthen the means of implementation and revitalize the global partnership for sustainable development",
+            "Strengthen the means of implementation and revitalize the global partnership",
+            "Dont strengthen the means of implementation and do not revitalize the global partnership",
+            "Strengthen the means of implementation and revitalize the Global Partnership for money"
+        ],
+        "correct": 0,
+        "category": 17
+    }
+}
