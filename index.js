@@ -109,7 +109,7 @@ let beantwortet = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let cursor = 0;
 
 // die Farben der einzelnen SDG's
-const colors = ['#ec1629', '#d4a124', '#229c46', '#c41930', '#f03e27', '#00b0da', '#fdb80b', '#901135', '#f36d20', '#e20c85', '#f99e21', '#d08e25', '#46783c', '#007ebd', '#3bb247', '#00548c', '#113368'];
+const colors = ['#ec1629', '#d4a124', '#229c46', '#c41930', '#f03e27', '#00b0da', '#fdb80b', '#901135', '#f36d20', '#e20c85', '#f99e21', '#d08e25', '#46783c', '#007ebd', '#3bb247', '#00548c', '#183668'];
 
 function changeColor(color) {
     document.body.style.background = color;
@@ -169,7 +169,7 @@ function gameover() {
         auswertung.textContent += "You are a sustainable homie! Download the certificate.";
         showDownloadForm();
     } else {
-        auswertung.textContent += "You need at least 80% of the questions right to succeed. Try againg!";
+        auswertung.textContent += " You need at least 80% of the questions right to succeed. Try againg!";
         // TODO: add "try again" button
     }
     document.getElementById('footer').style.color = '#809d67';

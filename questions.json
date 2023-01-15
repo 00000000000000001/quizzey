@@ -88,7 +88,7 @@
         "category": 4
     },
     "9": {
-        "question": "Which of these target have to be meet for quality education?",
+        "question": "Which of these targets have to be met for quality education?",
         "answers": [
             "Eliminate all discrimination in education",
             "Eliminate all teachers in education",
@@ -555,7 +555,7 @@
             "Bicycle",
             "Bus",
             "Car",
-            "train"
+            "Train"
         ],
         "correct": 0,
         "category": 11
@@ -640,10 +640,10 @@
     "59": {
         "question": "The fifth sustainable development goal is:",
         "answers": [
-            "Achieve gender equuality and empower all women and girls",
-            "Achieve gender equuality and empower all men and boys",
-            "Achieve gender equuality and empower all non-binary people",
-            "Achieve gender equuality and empower all rich people"
+            "Achieve gender equality and empower all women and girls",
+            "Achieve gender equality and empower all men and boys",
+            "Achieve gender equality and empower all non-binary people",
+            "Achieve gender equality and empower all rich people"
         ],
         "correct": 0,
         "category": 5
